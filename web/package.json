@@ -20,7 +20,7 @@
     "@next/mdx": "15.3.3",
     "@popperjs/core": "2.11.8",
     "@sentry/nextjs": "9.24.0",
-    "bootstrap": "5.3.6",
+    "bootstrap": "5.3.7",
     "bootstrap-icons": "1.13.1",
     "cpx2": "8.0.0",
     "jest-preview": "0.3.1",
