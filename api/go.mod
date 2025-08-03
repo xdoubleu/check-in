@@ -7,7 +7,7 @@ toolchain go1.23.3
 require github.com/justinas/alice v1.2.0
 
 require (
-	github.com/XDoubleU/essentia v1.0.2
+	github.com/XDoubleU/essentia v1.0.3
 	github.com/dlclark/regexp2 v1.11.5
 	github.com/getsentry/sentry-go v0.35.0
 	github.com/google/uuid v1.6.0
@@ -28,7 +28,7 @@ require (
 	github.com/sethvargo/go-retry v0.3.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/sys v0.34.0 // indirect
-	golang.org/x/time v0.11.0 // indirect
+	golang.org/x/time v0.12.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 

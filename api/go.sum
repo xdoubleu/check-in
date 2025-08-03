@@ -6,6 +6,8 @@ github.com/XDoubleU/essentia v1.0.1 h1:mQkGAnWzlzQ1icheWTJ5fV7/tVqnJ4EnFH5ToBTC4
 github.com/XDoubleU/essentia v1.0.1/go.mod h1:dU1IyIOMjg7JBzsS3XnUngOzucQWG5DwZLfM2aE5RzA=
 github.com/XDoubleU/essentia v1.0.2 h1:AYcS5wxNv96qvw5YFLr5gCau/URfU9+4EJvTWL9K3Yo=
 github.com/XDoubleU/essentia v1.0.2/go.mod h1:uPwZwL/l1wcRa1IiryEy8YND4Y9dC+vpf/EgzwtXGYE=
+github.com/XDoubleU/essentia v1.0.3 h1:t16BeyCzH50kD7bxmEyIZ+B83mdLF0B61y87rUZp0f0=
+github.com/XDoubleU/essentia v1.0.3/go.mod h1:Q3urPKcZA/zkoH0hMoe1FVRSTBBvqDNQ1adHlVN4U0I=
 github.com/coder/websocket v1.8.13 h1:f3QZdXy7uGVz+4uCJy2nTZyM0yTBj8yANEHhqlXZ9FE=
 github.com/coder/websocket v1.8.13/go.mod h1:LNVeNrXQZfe5qhS9ALED3uA+l5pPqvwXg3CKoDBB2gs=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -124,6 +126,7 @@ golang.org/x/text v0.27.0 h1:4fGWRpyh641NLlecmyl4LOe6yDdfaYNrGb2zdfo4JV4=
 golang.org/x/text v0.27.0/go.mod h1:1D28KMCvyooCX9hBiosv5Tz/+YLxj0j7XhWjpSUF7CU=
 golang.org/x/time v0.11.0 h1:/bpjEDfN9tkoN/ryeYHnv5hcMlc8ncjMcM4XBk5NWV0=
 golang.org/x/time v0.11.0/go.mod h1:CDIdPxbZBQxdj6cxyCIdrNogrJKMJ7pr37NYpMcMDSg=
+golang.org/x/time v0.12.0/go.mod h1:CDIdPxbZBQxdj6cxyCIdrNogrJKMJ7pr37NYpMcMDSg=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c h1:Hei/4ADfdWqJk1ZMxUNpqntNwaWcugrBjAiHlqqRiVk=
 gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c/go.mod h1:JHkPIbrfpd72SG/EVd6muEfDQjcINNoR0C8j2r3qZ4Q=
