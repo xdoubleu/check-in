@@ -6382,7 +6382,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4, debug@npm:^4.3.5, debug@npm:^4.4.0":
+"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4, debug@npm:^4.3.5, debug@npm:^4.3.6, debug@npm:^4.4.0":
   version: 4.4.1
   resolution: "debug@npm:4.4.1"
   dependencies:
@@ -8534,7 +8534,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ignore@npm:^5.2.0, ignore@npm:^5.3.1":
+"ignore@npm:^5.2.0, ignore@npm:^5.3.2":
   version: 5.3.2
   resolution: "ignore@npm:5.3.2"
   checksum: 10c0/f9f652c957983634ded1e7f02da3b559a0d4cc210fca3792cb67f1b153623c9c42efdc1c4121af171e295444459fc4a9201101fb041b1104a3c000bccb188337
@@ -10093,7 +10093,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsonc-parser@npm:^3.2.1":
+"jsonc-parser@npm:^3.3.1":
   version: 3.3.1
   resolution: "jsonc-parser@npm:3.3.1"
   checksum: 10c0/269c3ae0a0e4f907a914bf334306c384aabb9929bd8c99f909275ebd5c2d3bc70b9bcd119ad794f339dec9f24b6a4ee9cd5a8ab2e6435e730ad4075388fc2ab6
@@ -11567,30 +11567,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-package-json-lint@npm:8.0.0":
-  version: 8.0.0
-  resolution: "npm-package-json-lint@npm:8.0.0"
+"npm-package-json-lint@npm:9.0.0":
+  version: 9.0.0
+  resolution: "npm-package-json-lint@npm:9.0.0"
   dependencies:
     ajv: "npm:^6.12.6"
     ajv-errors: "npm:^1.0.1"
     chalk: "npm:^4.1.2"
     cosmiconfig: "npm:^8.3.6"
-    debug: "npm:^4.3.4"
+    debug: "npm:^4.3.6"
     globby: "npm:^11.1.0"
-    ignore: "npm:^5.3.1"
+    ignore: "npm:^5.3.2"
     is-plain-obj: "npm:^3.0.0"
-    jsonc-parser: "npm:^3.2.1"
+    jsonc-parser: "npm:^3.3.1"
     log-symbols: "npm:^4.1.0"
     meow: "npm:^9.0.0"
     plur: "npm:^4.0.0"
-    semver: "npm:^7.6.2"
+    semver: "npm:^7.6.3"
     slash: "npm:^3.0.0"
     strip-json-comments: "npm:^3.1.1"
-    type-fest: "npm:^4.20.0"
-    validate-npm-package-name: "npm:^5.0.1"
+    type-fest: "npm:^4.26.1"
+    validate-npm-package-name: "npm:^6.0.0"
   bin:
     npmPkgJsonLint: dist/cli.js
-  checksum: 10c0/39943ae726dc2ca1483897bdcbf6eb8d4cbd68501f42a08a73fe35b024c8c7d3adbb489b244ec719856513d51a4e3243ec5d531b62112d99f5c74b5eb60dc88f
+  checksum: 10c0/89dbdfffe3958d0750b85d3b5a6217e32a2d31bfe9c94d790f9be8fcbaf87b2ba889af9e31a93ef353ff842ea5109516f1ee837dd564ec1634085609414f4d58
   languageName: node
   linkType: hard
 
@@ -13599,7 +13599,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0, semver@npm:^7.6.2, semver@npm:^7.7.1, semver@npm:^7.7.2":
+"semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0, semver@npm:^7.6.3, semver@npm:^7.7.1, semver@npm:^7.7.2":
   version: 7.7.2
   resolution: "semver@npm:7.7.2"
   bin:
@@ -14770,7 +14770,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.20.0, type-fest@npm:^4.39.1, type-fest@npm:^4.41.0":
+"type-fest@npm:^4.26.1, type-fest@npm:^4.39.1, type-fest@npm:^4.41.0":
   version: 4.41.0
   resolution: "type-fest@npm:4.41.0"
   checksum: 10c0/f5ca697797ed5e88d33ac8f1fec21921839871f808dc59345c9cf67345bfb958ce41bd821165dbf3ae591cedec2bf6fe8882098dfdd8dc54320b859711a2c1e4
@@ -15282,10 +15282,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"validate-npm-package-name@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "validate-npm-package-name@npm:5.0.1"
-  checksum: 10c0/903e738f7387404bb72f7ac34e45d7010c877abd2803dc2d614612527927a40a6d024420033132e667b1bade94544b8a1f65c9431a4eb30d0ce0d80093cd1f74
+"validate-npm-package-name@npm:^6.0.0":
+  version: 6.0.2
+  resolution: "validate-npm-package-name@npm:6.0.2"
+  checksum: 10c0/c4c23a8b9fa8deee11eea421d94fbe39f742146c06571b62247212579298186b724ebc5152240a415753bdaf9b8849a487e675ec2968d44660f8a65de6cdef9e
   languageName: node
   linkType: hard
 
@@ -15427,7 +15427,7 @@ __metadata:
     next: "npm:15.3.3"
     next-pwa: "npm:5.6.0"
     next-router-mock: "npm:1.0.2"
-    npm-package-json-lint: "npm:8.0.0"
+    npm-package-json-lint: "npm:9.0.0"
     openapi-typescript: "npm:7.8"
     prettier: "npm:3.5.3"
     query-string: "npm:9.2.0"
