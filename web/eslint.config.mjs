@@ -1,5 +1,3 @@
-import { fixupConfigRules } from "@eslint/compat";
-import _import from "eslint-plugin-import";
 import sonarjs from "eslint-plugin-sonarjs";
 import redundantUndefined from "eslint-plugin-redundant-undefined";
 import jestDom from "eslint-plugin-jest-dom";
@@ -8,18 +6,12 @@ import tsParser from "@typescript-eslint/parser";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
 import tseslint from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
 import eslintConfigPrettier from "eslint-config-prettier"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
-});
 
 export default [{
     ignores: [
@@ -43,9 +35,7 @@ sonarjs.configs.recommended,
 jestDom.configs["flat/recommended"],
 testingLibrary.configs["flat/react"],
 eslintConfigPrettier,
-...fixupConfigRules(compat.extends(
-    "next/core-web-vitals",
-)), {
+{
     plugins: {
         "redundant-undefined": redundantUndefined,
     },
