@@ -1,5 +1,5 @@
 import userEvent from "@testing-library/user-event"
-import { render, waitFor, screen, fireEvent } from "test-utils"
+import { render, waitFor, screen } from "test-utils"
 import SignIn from "pages/signin"
 import React from "react"
 import mockRouter from "next-router-mock"
@@ -25,7 +25,7 @@ describe("SignIn (page)", () => {
 
     await userEvent.type(usernameInput, "validusername")
     await userEvent.type(passwordInput, "validpassword")
-    fireEvent.click(signInButton)
+    await userEvent.click(signInButton)
 
     await waitFor(() => {
       expect(signIn).toHaveBeenCalled()
@@ -55,7 +55,7 @@ describe("SignIn (page)", () => {
 
     await userEvent.type(usernameInput, "invalidusername")
     await userEvent.type(passwordInput, "invalidpassword")
-    fireEvent.click(signInButton)
+    await userEvent.click(signInButton)
 
     await waitFor(() => {
       expect(signIn).toHaveBeenCalled()
