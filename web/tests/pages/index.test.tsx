@@ -6,7 +6,7 @@ import {
 import { mocked } from "jest-mock"
 import mockRouter from "next-router-mock"
 import CheckIn from "pages"
-import { screen, render, waitFor, fireEvent } from "test-utils"
+import { screen, render, waitFor } from "test-utils"
 import {
   adminUserMock,
   defaultUserMock,
@@ -18,6 +18,7 @@ import {
   type LocationUpdateEvent,
   type State
 } from "api-wrapper/types/apiTypes"
+import userEvent from "@testing-library/user-event"
 
 mocked(checkinsWebsocket).mockImplementation(() => {
   return new WebSocket("ws://localhost:8000")
@@ -52,11 +53,11 @@ describe("CheckIn (page)", () => {
 
     // First check-in
     const button = screen.getByRole("button", { name: "CHECK-IN" })
-    fireEvent.click(button)
+    await userEvent.click(button)
 
     await screen.findByRole("heading", { name: "KIES JE SCHOOL:" })
     let school = screen.getByRole("button", { name: "ANDERE" })
-    fireEvent.click(school)
+    await userEvent.click(school)
 
     await waitFor(() => {
       expect(school).not.toBeVisible()
@@ -72,11 +73,11 @@ describe("CheckIn (page)", () => {
     )
 
     // Second check-in
-    fireEvent.click(button)
+    await userEvent.click(button)
 
     await screen.findByRole("heading", { name: "KIES JE SCHOOL:" })
     school = screen.getByRole("button", { name: "ANDERE" })
-    fireEvent.click(school)
+    await userEvent.click(school)
 
     // Check that location is full
     await screen.findByRole("button", { name: "VOLZET" })

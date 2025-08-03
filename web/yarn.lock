@@ -7965,15 +7965,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-testing-library@npm:7.3.0":
-  version: 7.3.0
-  resolution: "eslint-plugin-testing-library@npm:7.3.0"
+"eslint-plugin-testing-library@npm:7.6.3":
+  version: 7.6.3
+  resolution: "eslint-plugin-testing-library@npm:7.6.3"
   dependencies:
     "@typescript-eslint/scope-manager": "npm:^8.15.0"
     "@typescript-eslint/utils": "npm:^8.15.0"
   peerDependencies:
     eslint: ^8.57.0 || ^9.0.0
-  checksum: 10c0/febd1823838813bf5ebd122d1da97b3059c181a9586cc8b378870d20d27383342c4536ae86d51a4c2a95b1085167cdf951a5c83ff22c6087d7e9357a10e986a5
+  checksum: 10c0/b48f679ff670110aec52c93ac8dce9f17129e1e253c6ac14f745e6a0164fb5bbb040988fabe414f2c3f46587d72935e8fe7e1a50bfe0403374d1be5794bd6d29
   languageName: node
   linkType: hard
 
@@ -16201,7 +16201,7 @@ __metadata:
     eslint-plugin-jest-dom: "npm:5.5.0"
     eslint-plugin-redundant-undefined: "npm:1.0.0"
     eslint-plugin-sonarjs: "npm:3.0.4"
-    eslint-plugin-testing-library: "npm:7.3.0"
+    eslint-plugin-testing-library: "npm:7.6.3"
     jest: "npm:30.0.5"
     jest-environment-jsdom: "npm:30.0.5"
     jest-mock: "npm:30.0.5"
