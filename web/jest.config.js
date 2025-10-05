@@ -24,7 +24,7 @@ const config = {
 module.exports =  async () => ({
   ...(await createJestConfig(config)()),
   transformIgnorePatterns: [
-    'node_modules/(?!(query-string|decode-uri-component|split-on-first|filter-obj)/)'
+    'node_modules/(?!(query-string|decode-uri-component|split-on-first|filter-obj|uuid)/)'
   ]
 })
 
