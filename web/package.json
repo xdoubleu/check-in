@@ -19,7 +19,7 @@
     "@mdx-js/react": "3.1.0",
     "@next/mdx": "15.4.5",
     "@popperjs/core": "2.11.8",
-    "@sentry/nextjs": "10.0.0",
+    "@sentry/nextjs": "10.17.0",
     "bootstrap": "5.3.7",
     "bootstrap-icons": "1.13.1",
     "cpx2": "8.0.0",
