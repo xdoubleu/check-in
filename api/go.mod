@@ -12,7 +12,7 @@ require (
 	github.com/getsentry/sentry-go v0.35.3
 	github.com/google/uuid v1.6.0
 	github.com/pressly/goose/v3 v3.26.0
-	github.com/stretchr/testify v1.11.0
+	github.com/stretchr/testify v1.11.1
 	github.com/xhit/go-str2duration/v2 v2.1.0
 )
 
