@@ -3189,7 +3189,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redocly/openapi-core@npm:^1.34.3":
+"@redocly/openapi-core@npm:^1.34.5":
   version: 1.34.5
   resolution: "@redocly/openapi-core@npm:1.34.5"
   dependencies:
@@ -11922,21 +11922,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openapi-typescript@npm:7.8":
-  version: 7.8.0
-  resolution: "openapi-typescript@npm:7.8.0"
+"openapi-typescript@npm:7.9":
+  version: 7.9.1
+  resolution: "openapi-typescript@npm:7.9.1"
   dependencies:
-    "@redocly/openapi-core": "npm:^1.34.3"
+    "@redocly/openapi-core": "npm:^1.34.5"
     ansi-colors: "npm:^4.1.3"
     change-case: "npm:^5.4.4"
     parse-json: "npm:^8.3.0"
-    supports-color: "npm:^10.0.0"
+    supports-color: "npm:^10.1.0"
     yargs-parser: "npm:^21.1.1"
   peerDependencies:
     typescript: ^5.x
   bin:
     openapi-typescript: bin/cli.js
-  checksum: 10c0/5c73e769b83d01c8a9d409b9f07e5c3ab4805392445acf47f17b931fecb8bd4ca1f271a31acc32a2ec8ebd25ce9f71ededa13ddec9285d694034035e2bc0db7a
+  checksum: 10c0/52db65d211f872e0a34018cca409f388d70d55fa7cd6e07eacbb8ffc873ed78ffa29f95758766e2bd51ef87145aea8b66350638355cac5887f407aba9080d408
   languageName: node
   linkType: hard
 
@@ -14509,10 +14509,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"supports-color@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "supports-color@npm:10.0.0"
-  checksum: 10c0/0e7884dfd02a07b3c6e0b235346f58c19f0201f1e44f7807583581761b354688c8577378785b5a4e3b03110809786c4c808e0e086cd91911f7b8bc59132703a8
+"supports-color@npm:^10.1.0":
+  version: 10.2.2
+  resolution: "supports-color@npm:10.2.2"
+  checksum: 10c0/fb28dd7e0cdf80afb3f2a41df5e068d60c8b4f97f7140de2eaed5b42e075d82a0e980b20a2c0efd2b6d73cfacb55555285d8cc719fa0472220715aefeaa1da7c
   languageName: node
   linkType: hard
 
@@ -15582,7 +15582,7 @@ __metadata:
     next-pwa: "npm:5.6.0"
     next-router-mock: "npm:1.0.2"
     npm-package-json-lint: "npm:9.0.0"
-    openapi-typescript: "npm:7.8"
+    openapi-typescript: "npm:7.9"
     prettier: "npm:3.6.2"
     query-string: "npm:9.2.2"
     react: "npm:19.1.1"
