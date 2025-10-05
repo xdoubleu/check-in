@@ -36,7 +36,7 @@ jobs:
       - run: make build
         working-directory: './api'
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           cache: 'yarn'
           node-version-file: './web/package.json'
