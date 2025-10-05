@@ -11,8 +11,8 @@ require (
 	github.com/dlclark/regexp2 v1.11.5
 	github.com/getsentry/sentry-go v0.35.0
 	github.com/google/uuid v1.6.0
-	github.com/pressly/goose/v3 v3.24.3
-	github.com/stretchr/testify v1.10.0
+	github.com/pressly/goose/v3 v3.26.0
+	github.com/stretchr/testify v1.11.0
 	github.com/xhit/go-str2duration/v2 v2.1.0
 )
 
