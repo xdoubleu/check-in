@@ -5,9 +5,8 @@ import { refreshTokens } from "./auth"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function stringifyReplacer(_key: any, value: any): any {
-  if (typeof value === "boolean") value = Boolean(value)
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  else if (!isNaN(value)) value = Number(value)
+  if (!isNaN(value)) value = Number(value)
   return value
 }
 
