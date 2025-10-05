@@ -12928,9 +12928,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"recharts@npm:3.1.0":
-  version: 3.1.0
-  resolution: "recharts@npm:3.1.0"
+"recharts@npm:3.2.1":
+  version: 3.2.1
+  resolution: "recharts@npm:3.2.1"
   dependencies:
     "@reduxjs/toolkit": "npm:1.x.x || 2.x.x"
     clsx: "npm:^2.1.1"
@@ -12947,7 +12947,7 @@ __metadata:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-is: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10c0/87caca9dec962ff85073590fb39a004dfc827648e51ec0039e1b0c21569a3c7b52896d904508309e7cdb87d5806e974629fc7c35f06720a664dfda27b62d7bde
+  checksum: 10c0/7d81126f6f14f15ced9f6408ef2edc494bff098d143506f339122a809a76c7e7995aad5e80f504ee48cc4cef7ce2a6c45a66a6cec6b323092c5b27ee0288c269
   languageName: node
   linkType: hard
 
@@ -15511,7 +15511,7 @@ __metadata:
     react-dom: "npm:19.1.1"
     react-hook-form: "npm:7.64.0"
     react-spinners: "npm:0.17.0"
-    recharts: "npm:3.1.0"
+    recharts: "npm:3.2.1"
     sass: "npm:1.93.2"
     serve: "npm:14.2.5"
     ts-jest: "npm:29.4.4"
