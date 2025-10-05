@@ -4659,15 +4659,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/uuid@npm:11.0.0":
-  version: 11.0.0
-  resolution: "@types/uuid@npm:11.0.0"
-  dependencies:
-    uuid: "npm:*"
-  checksum: 10c0/6ebf1448d8fdc78d348a8a84389b74083f2f58bed75a5a6cf3be8419d33dcf757735c8b2de746b066ff8ef07f4384d02549774dc84195ffa46b24745471e9d8e
-  languageName: node
-  linkType: hard
-
 "@types/warning@npm:^3.0.3":
   version: 3.0.3
   resolution: "@types/warning@npm:3.0.3"
@@ -15337,7 +15328,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:*, uuid@npm:13.0.0":
+"uuid@npm:13.0.0":
   version: 13.0.0
   resolution: "uuid@npm:13.0.0"
   bin:
@@ -15493,7 +15484,6 @@ __metadata:
     "@types/react": "npm:19.1.9"
     "@types/react-dom": "npm:19.1.7"
     "@types/uglify-js": "npm:3"
-    "@types/uuid": "npm:11.0.0"
     "@typescript-eslint/parser": "npm:8.38.0"
     bootstrap: "npm:5.3.7"
     bootstrap-icons: "npm:1.13.1"
