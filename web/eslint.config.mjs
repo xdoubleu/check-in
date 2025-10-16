@@ -25,6 +25,7 @@ export default [{
         "node_modules",
         "**/schema.d.ts",
         "jest.setup.js",
+        "next-env.d.ts",
     ],
 },
 js.configs.recommended,
