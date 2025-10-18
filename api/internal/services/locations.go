@@ -83,7 +83,10 @@ func (service LocationService) GetCheckInsEntriesDay(
 	)
 
 	for _, checkIn := range checkIns {
-		datetime := timetools.LocationIndependentTime(checkIn.CreatedAt.Time, locationsTimeZoneMap[checkIn.LocationID])
+		datetime := timetools.LocationIndependentTime(
+			checkIn.CreatedAt.Time,
+			locationsTimeZoneMap[checkIn.LocationID],
+		)
 		g.AddPoint(datetime, 1, checkIn.SchoolName)
 		capacitiesGrapher.AddPoint(datetime, int(checkIn.Capacity), checkIn.LocationID)
 	}
