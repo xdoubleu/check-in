@@ -20,6 +20,7 @@ import (
 	"check-in/api/internal/constants"
 	"check-in/api/internal/dtos"
 	"check-in/api/internal/models"
+	"check-in/api/internal/shared"
 )
 
 func TestYesterdayFullAt(t *testing.T) {
@@ -901,11 +902,8 @@ func GetAllCheckInsToday(t *testing.T, testEnv TestEnv, testApp Application) {
 		assert.Equal(t, amount, len(rsData))
 		assert.Equal(t, testEnv.fixtures.DefaultLocation.ID, rsData[0].LocationID)
 		assert.Equal(t, "Andere", rsData[0].SchoolName)
-		assert.Equal(
-			t,
-			testApp.getTimeNowUTC().Format(constants.DateFormat),
-			rsData[0].CreatedAt.Time.Format(constants.DateFormat),
-		)
+		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
+		shared.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData[0].CreatedAt.Time)
 	}
 }
 
@@ -1043,11 +1041,8 @@ func TestDeleteCheckIn(t *testing.T) {
 		assert.Equal(t, checkIns[i].ID, rsData.ID)
 		assert.Equal(t, testEnv.fixtures.DefaultLocation.ID, rsData.LocationID)
 		assert.Equal(t, "Andere", rsData.SchoolName)
-		assert.Equal(
-			t,
-			testApp.getTimeNowUTC().Format(constants.DateFormat),
-			rsData.CreatedAt.Time.Format(constants.DateFormat),
-		)
+		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
+		shared.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData.CreatedAt.Time)
 	}
 }
 
@@ -2045,7 +2040,6 @@ func TestUpdateLocationFailValidation(t *testing.T) {
 
 	tReq1 := tReq.Copy()
 
-	//nolint:lll //can't make this shorter
 	name, username, password, timeZone1 := "test", "test", "testpassword", "US/Pacific"
 	var capacity1 int64 = -1
 

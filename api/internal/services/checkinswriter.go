@@ -6,6 +6,7 @@ import (
 
 	"github.com/XDoubleU/essentia/pkg/database"
 	errortools "github.com/XDoubleU/essentia/pkg/errors"
+	timetools "github.com/XDoubleU/essentia/pkg/time"
 
 	"check-in/api/internal/dtos"
 	"check-in/api/internal/models"
@@ -78,6 +79,11 @@ func (service CheckInWriterService) Create(
 		Capacity:   checkIn.Capacity,
 		CreatedAt:  checkIn.CreatedAt,
 	}
+
+	checkInDto.CreatedAt.Time = timetools.LocationIndependentTime(
+		checkIn.CreatedAt.Time,
+		location.TimeZone,
+	)
 
 	return checkInDto, nil
 }
