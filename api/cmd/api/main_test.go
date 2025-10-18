@@ -49,9 +49,9 @@ var postgresDB *pgxpool.Pool //nolint:gochecknoglobals //required
 
 var timesToCheck = []shared.LocalNowTimeProvider{ //nolint:gochecknoglobals //required
 	time.Now,
-	func() time.Time { return getTimeNow(23, false, "US/Pacific") },
-	func() time.Time { return getTimeNow(00, true, "US/Pacific") },
-	func() time.Time { return getTimeNow(01, true, "US/Pacific") },
+	func() time.Time { return getTimeNow(23, false, "America/Los_Angeles") },
+	func() time.Time { return getTimeNow(00, true, "America/Los_Angeles") },
+	func() time.Time { return getTimeNow(01, true, "America/Los_Angeles") },
 	func() time.Time { return getTimeNow(23, false, "UTC") },
 	func() time.Time { return getTimeNow(00, false, "UTC") },
 	func() time.Time { return getTimeNow(01, false, "UTC") },
@@ -112,7 +112,7 @@ func (env *TestEnv) defaultFixtures() {
 		dtos.CreateLocationDto{
 			Name:     "TestLocation",
 			Capacity: 20,
-			TimeZone: "US/Pacific",
+			TimeZone: "America/Los_Angeles",
 			Username: "Default",
 			Password: "testpassword",
 		},
@@ -262,7 +262,7 @@ func (env *TestEnv) createLocations(amount int) []*models.Location {
 			dtos.CreateLocationDto{
 				Name:     fmt.Sprintf("TestLocation%d", i),
 				Capacity: 20,
-				TimeZone: "US/Pacific",
+				TimeZone: "America/Los_Angeles",
 				Username: fmt.Sprintf("TestDefaultUser%d", i),
 				Password: "testpassword",
 			},

@@ -1616,7 +1616,7 @@ func TestCreateLocation(t *testing.T) {
 			Capacity: 10,
 			Username: unique,
 			Password: "testpassword",
-			TimeZone: "US/Pacific",
+			TimeZone: "America/Los_Angeles",
 		}
 
 		tReq := test.CreateRequestTester(
@@ -1657,7 +1657,7 @@ func TestCreateLocationNameExists(t *testing.T) {
 		Capacity: 10,
 		Username: "test",
 		Password: "testpassword",
-		TimeZone: "US/Pacific",
+		TimeZone: "America/Los_Angeles",
 	}
 
 	tReq := test.CreateRequestTester(
@@ -1693,7 +1693,7 @@ func TestCreateLocationNormalizedNameExists(t *testing.T) {
 		Capacity: 10,
 		Username: "test",
 		Password: "testpassword",
-		TimeZone: "US/Pacific",
+		TimeZone: "America/Los_Angeles",
 	}
 
 	tReq := test.CreateRequestTester(
@@ -1729,7 +1729,7 @@ func TestCreateLocationUserNameExists(t *testing.T) {
 		Capacity: 10,
 		Username: testEnv.fixtures.DefaultUser.Username,
 		Password: "testpassword",
-		TimeZone: "US/Pacific",
+		TimeZone: "America/Los_Angeles",
 	}
 
 	tReq := test.CreateRequestTester(
@@ -1776,7 +1776,7 @@ func TestCreateLocationFailValidation(t *testing.T) {
 		Capacity: -1,
 		Username: "test",
 		Password: "testpassword",
-		TimeZone: "US/Pacific",
+		TimeZone: "America/Los_Angeles",
 	})
 
 	tRes1 := test.NewCaseResponse(http.StatusUnprocessableEntity, nil,
@@ -1841,7 +1841,7 @@ func TestUpdateLocation(t *testing.T) {
 	for i, user := range users {
 		unique := fmt.Sprintf("test%d", i)
 		name, username, password := unique, unique, "testpassword"
-		timeZone := "US/Pacific"
+		timeZone := "America/Los_Angeles"
 		var capacity int64 = 3
 
 		data := dtos.UpdateLocationDto{
@@ -1897,7 +1897,7 @@ func TestUpdateLocationNameExists(t *testing.T) {
 	location := testEnv.createLocations(1)[0]
 
 	name, username, password, timeZone := testEnv.fixtures.DefaultLocation.Name, "test",
-		"testpassword", "US/Pacific"
+		"testpassword", "America/Los_Angeles"
 	var capacity int64 = 10
 
 	data := dtos.UpdateLocationDto{
@@ -1943,7 +1943,7 @@ func TestUpdateLocationNormalizedNameExists(t *testing.T) {
 		"$%s$",
 		testEnv.fixtures.DefaultLocation.Name,
 	), "test",
-		"testpassword", "US/Pacific"
+		"testpassword", "America/Los_Angeles"
 	var capacity int64 = 10
 
 	data := dtos.UpdateLocationDto{
@@ -1986,7 +1986,7 @@ func TestUpdateLocationUserNameExists(t *testing.T) {
 	location := testEnv.createLocations(1)[0]
 
 	name, username, password, timeZone := "test", testEnv.fixtures.DefaultUser.Username,
-		"testpassword", "US/Pacific"
+		"testpassword", "America/Los_Angeles"
 	var capacity int64 = 10
 
 	data := dtos.UpdateLocationDto{
@@ -2040,7 +2040,7 @@ func TestUpdateLocationFailValidation(t *testing.T) {
 
 	tReq1 := tReq.Copy()
 
-	name, username, password, timeZone1 := "test", "test", "testpassword", "US/Pacific"
+	name, username, password, timeZone1 := "test", "test", "testpassword", "America/Los_Angeles"
 	var capacity1 int64 = -1
 
 	tReq1.SetData(dtos.UpdateLocationDto{
@@ -2085,7 +2085,7 @@ func TestUpdateLocationNotFound(t *testing.T) {
 	testEnv, testApp := setup(t)
 	defer testEnv.teardown()
 
-	name, username, password, timeZone := "test", "test", "password", "US/Pacific"
+	name, username, password, timeZone := "test", "test", "password", "America/Los_Angeles"
 	var capacity int64 = 10
 
 	data := dtos.UpdateLocationDto{
@@ -2129,7 +2129,7 @@ func TestUpdateLocationNotFoundNotOwner(t *testing.T) {
 
 	location := testEnv.createLocations(1)[0]
 
-	name, username, password, timeZone := "test", "test", "testpassword", "US/Pacific"
+	name, username, password, timeZone := "test", "test", "testpassword", "America/Los_Angeles"
 	var capacity int64 = 10
 
 	data := dtos.UpdateLocationDto{
@@ -2169,7 +2169,7 @@ func TestUpdateLocationNotUUID(t *testing.T) {
 	testEnv, testApp := setup(t)
 	defer testEnv.teardown()
 
-	name, username, password, timeZone := "test", "test", "password", "US/Pacific"
+	name, username, password, timeZone := "test", "test", "password", "America/Los_Angeles"
 	var capacity int64 = 10
 
 	data := dtos.UpdateLocationDto{

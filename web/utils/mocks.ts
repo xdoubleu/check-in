@@ -11,7 +11,7 @@ export const DefaultLocation: Location = {
   normalizedName: "location",
   available: 2,
   capacity: 10,
-  timeZone: "US/Pacific",
+  timeZone: "America/Los_Angeles",
   userId: "userId",
   yesterdayFullAt: "",
   availableYesterday: 0,
