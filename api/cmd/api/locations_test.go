@@ -2040,7 +2040,8 @@ func TestUpdateLocationFailValidation(t *testing.T) {
 
 	tReq1 := tReq.Copy()
 
-	name, username, password, timeZone1 := "test", "test", "testpassword", "America/Los_Angeles"
+	name, username, password := "test", "test", "testpassword"
+	timeZone1 := "America/Los_Angeles"
 	var capacity1 int64 = -1
 
 	tReq1.SetData(dtos.UpdateLocationDto{
@@ -2129,7 +2130,8 @@ func TestUpdateLocationNotFoundNotOwner(t *testing.T) {
 
 	location := testEnv.createLocations(1)[0]
 
-	name, username, password, timeZone := "test", "test", "testpassword", "America/Los_Angeles"
+	name, username, password := "test", "test", "testpassword"
+	timeZone := "America/Los_Angeles"
 	var capacity int64 = 10
 
 	data := dtos.UpdateLocationDto{
