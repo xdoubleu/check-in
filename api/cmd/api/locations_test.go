@@ -64,12 +64,11 @@ func YesterdayFullAt(t *testing.T, testEnv TestEnv, testApp Application) {
 
 	assert.Equal(t, http.StatusOK, rs.StatusCode)
 
-	loc, _ := time.LoadLocation(rsData.TimeZone)
 	assert.EqualValues(t, 0, rsData.AvailableYesterday)
 	assert.Equal(t, testEnv.fixtures.DefaultLocation.Capacity, rsData.CapacityYesterday)
 	assert.Equal(t, true, rsData.YesterdayFullAt.Valid)
-	assert.Equal(t, now.In(loc).Day(), rsData.YesterdayFullAt.Time.Day())
-	assert.Equal(t, now.In(loc).Hour(), rsData.YesterdayFullAt.Time.Hour())
+	assert.Equal(t, now.Day(), rsData.YesterdayFullAt.Time.Day())
+	assert.Equal(t, now.Hour(), rsData.YesterdayFullAt.Time.Hour())
 }
 
 func TestGetCheckInsLocationRangeRawSingle(t *testing.T) {

@@ -64,6 +64,16 @@ func (service LocationService) GetCheckInsEntriesDay(
 		return nil, nil, nil, err
 	}
 
+	locations, err := service.getByIDs(ctx, locationIDs)
+	if err != nil {
+		return nil, nil, nil, err
+	}
+
+	locationsTimeZoneMap := make(map[string]string)
+	for _, location := range locations {
+		locationsTimeZoneMap[location.ID] = location.TimeZone
+	}
+
 	g := grapher.New[int](grapher.Cumulative, grapher.None, time.RFC3339, time.Second)
 	capacitiesGrapher := grapher.New[int](
 		grapher.Normal,
@@ -73,7 +83,10 @@ func (service LocationService) GetCheckInsEntriesDay(
 	)
 
 	for _, checkIn := range checkIns {
-		datetime := timetools.LocationIndependentTime(checkIn.CreatedAt.Time, "UTC")
+		datetime := timetools.LocationIndependentTime(
+			checkIn.CreatedAt.Time,
+			locationsTimeZoneMap[checkIn.LocationID],
+		)
 		g.AddPoint(datetime, 1, checkIn.SchoolName)
 		capacitiesGrapher.AddPoint(datetime, int(checkIn.Capacity), checkIn.LocationID)
 	}
@@ -218,13 +231,7 @@ func (service LocationService) GetAllCheckInsInRange(
 			return nil, nil, err
 		}
 
-		for _, checkIn := range locationCheckIns {
-			checkIn.CreatedAt.Time = timetools.LocationIndependentTime(
-				checkIn.CreatedAt.Time,
-				"UTC",
-			)
-			checkIns = append(checkIns, checkIn)
-		}
+		checkIns = append(checkIns, locationCheckIns...)
 	}
 
 	slices.SortFunc(checkIns, func(i, j *models.CheckIn) int {
