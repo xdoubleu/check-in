@@ -224,20 +224,14 @@ func (service LocationService) GetAllCheckInsInRange(
 		locationCheckIns, err = service.checkins.GetAllInRange(
 			ctx,
 			location.ID,
-			startDate,
-			endDate,
+			startDate.UTC(),
+			endDate.UTC(),
 		)
 		if err != nil {
 			return nil, nil, err
 		}
 
-		for _, checkIn := range locationCheckIns {
-			checkIn.CreatedAt.Time = timetools.LocationIndependentTime(
-				checkIn.CreatedAt.Time,
-				location.TimeZone,
-			)
-			checkIns = append(checkIns, checkIn)
-		}
+		checkIns = append(checkIns, locationCheckIns...)
 	}
 
 	slices.SortFunc(checkIns, func(i, j *models.CheckIn) int {
