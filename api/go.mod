@@ -1,8 +1,6 @@
 module check-in/api
 
-go 1.23.0
-
-toolchain go1.23.3
+go 1.24.0
 
 require github.com/justinas/alice v1.2.0
 
