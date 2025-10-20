@@ -241,9 +241,7 @@ func getCSVHeaders(
 		"capacity",
 	}
 
-	for _, schoolName := range schoolNames {
-		headers = append(headers, schoolName)
-	}
+	headers = append(headers, schoolNames...)
 
 	return headers
 }
