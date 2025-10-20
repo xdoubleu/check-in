@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"sort"
 	"strconv"
-	"time"
 
 	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
 	"github.com/XDoubleU/essentia/pkg/context"
@@ -195,8 +194,6 @@ func (app *Application) getLocationCheckInsRangeHandler(
 		ids,
 		startDate,
 		endDate,
-		constants.DateFormat,
-		24*time.Hour,
 	)
 	if err != nil {
 		httptools.HandleError(w, r, err)
