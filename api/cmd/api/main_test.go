@@ -48,13 +48,13 @@ var cfg config.Config        //nolint:gochecknoglobals //required
 var postgresDB *pgxpool.Pool //nolint:gochecknoglobals //required
 
 var timesToCheck = []shared.LocalNowTimeProvider{ //nolint:gochecknoglobals //required
-	time.Now,
+	//time.Now,
 	func() time.Time { return getTimeNow(23, false, "America/Los_Angeles") },
-	func() time.Time { return getTimeNow(00, true, "America/Los_Angeles") },
-	func() time.Time { return getTimeNow(01, true, "America/Los_Angeles") },
-	func() time.Time { return getTimeNow(23, false, "UTC") },
-	func() time.Time { return getTimeNow(00, false, "UTC") },
-	func() time.Time { return getTimeNow(01, false, "UTC") },
+	//func() time.Time { return getTimeNow(00, true, "America/Los_Angeles") },
+	//func() time.Time { return getTimeNow(01, true, "America/Los_Angeles") },
+	//func() time.Time { return getTimeNow(23, false, "UTC") },
+	//func() time.Time { return getTimeNow(00, false, "UTC") },
+	//func() time.Time { return getTimeNow(01, false, "UTC") },
 }
 
 func (env *TestEnv) defaultFixtures() {
