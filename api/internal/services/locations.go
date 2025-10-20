@@ -129,12 +129,14 @@ func (service LocationService) GetCheckInsEntriesRange(
 		grapher.CumulativeSameDate,
 		grapher.None,
 		constants.DateFormat,
+		//nolint:mnd //granularity of days
 		24*time.Hour,
 	)
 	capacitiesGrapher := grapher.New[int](
 		grapher.Normal,
 		grapher.None,
 		constants.DateFormat,
+		//nolint:mnd //granularity of days
 		24*time.Hour,
 	)
 
