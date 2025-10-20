@@ -11,6 +11,7 @@ import (
 	"github.com/XDoubleU/essentia/pkg/grapher"
 	timetools "github.com/XDoubleU/essentia/pkg/time"
 
+	"check-in/api/internal/constants"
 	"check-in/api/internal/dtos"
 	"check-in/api/internal/models"
 	"check-in/api/internal/repositories"
@@ -127,14 +128,16 @@ func (service LocationService) GetCheckInsEntriesRange(
 	g := grapher.New[int](
 		grapher.CumulativeSameDate,
 		grapher.None,
-		time.RFC3339,
-		time.Second,
+		constants.DateFormat,
+		//nolint:mnd //granularity of days
+		24*time.Hour,
 	)
 	capacitiesGrapher := grapher.New[int](
 		grapher.Normal,
 		grapher.None,
-		time.RFC3339,
-		time.Second,
+		constants.DateFormat,
+		//nolint:mnd //granularity of days
+		24*time.Hour,
 	)
 
 	for i := startDate; i.Before(endDate); i = i.AddDate(0, 0, 1) {

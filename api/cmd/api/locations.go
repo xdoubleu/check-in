@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"sort"
 	"strconv"
 
 	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
@@ -110,11 +111,19 @@ func (app *Application) getLocationCheckInsDayHandler(w http.ResponseWriter,
 			Format(constants.CSVFileNameFormat)
 		filename = "Day-" + filename
 
+		orderedSchoolNames := make([]string, 0, len(valueMap))
+		for schoolName := range valueMap {
+			orderedSchoolNames = append(orderedSchoolNames, schoolName)
+		}
+		sort.Slice(orderedSchoolNames, func(i, j int) bool {
+			return orderedSchoolNames[i] < orderedSchoolNames[j]
+		})
+
 		err = httptools.WriteCSV(
 			w,
 			filename,
-			getCSVHeaders(valueMap),
-			getCSVData(dateStrings, capacities, valueMap),
+			getCSVHeaders(orderedSchoolNames),
+			getCSVData(dateStrings, capacities, valueMap, orderedSchoolNames),
 		)
 	} else {
 		err = httptools.WriteJSON(w, http.StatusOK, dtos.CheckInsGraphDto{
@@ -197,11 +206,19 @@ func (app *Application) getLocationCheckInsRangeHandler(
 			Format(constants.CSVFileNameFormat)
 		filename = "Range-" + filename
 
+		orderedSchoolNames := make([]string, 0, len(valueMap))
+		for schoolName := range valueMap {
+			orderedSchoolNames = append(orderedSchoolNames, schoolName)
+		}
+		sort.Slice(orderedSchoolNames, func(i, j int) bool {
+			return orderedSchoolNames[i] < orderedSchoolNames[j]
+		})
+
 		err = httptools.WriteCSV(
 			w,
 			filename,
-			getCSVHeaders(valueMap),
-			getCSVData(dateStrings, capacities, valueMap),
+			getCSVHeaders(orderedSchoolNames),
+			getCSVData(dateStrings, capacities, valueMap, orderedSchoolNames),
 		)
 	} else {
 		err = httptools.WriteJSON(w, http.StatusOK, dtos.CheckInsGraphDto{
@@ -217,16 +234,14 @@ func (app *Application) getLocationCheckInsRangeHandler(
 }
 
 func getCSVHeaders(
-	valueMap map[string][]int,
+	schoolNames []string,
 ) []string {
 	headers := []string{
 		"datetime",
 		"capacity",
 	}
 
-	for schoolName := range valueMap {
-		headers = append(headers, schoolName)
-	}
+	headers = append(headers, schoolNames...)
 
 	return headers
 }
@@ -235,23 +250,26 @@ func getCSVData(
 	dateStrings []string,
 	capacities map[string][]int,
 	valuesPerSchool map[string][]int,
+	orderedSchoolNames []string,
 ) [][]string {
 	var output [][]string
 
 	for i, dateString := range dateStrings {
-		for _, values := range valuesPerSchool {
-			var entry []string
+		var entry []string
 
-			var totalCapacity int
-			for _, capacity := range capacities {
-				totalCapacity += capacity[i]
-			}
-
-			entry = append(entry, dateString)
-			entry = append(entry, fmt.Sprintf("%d", totalCapacity))
-			entry = append(entry, strconv.Itoa(values[i]))
-			output = append(output, entry)
+		var totalCapacity int
+		for _, capacity := range capacities {
+			totalCapacity += capacity[i]
 		}
+
+		entry = append(entry, dateString)
+		entry = append(entry, fmt.Sprintf("%d", totalCapacity))
+
+		for _, schoolName := range orderedSchoolNames {
+			entry = append(entry, strconv.Itoa(valuesPerSchool[schoolName][i]))
+		}
+
+		output = append(output, entry)
 	}
 
 	return output

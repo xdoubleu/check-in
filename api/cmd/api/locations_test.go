@@ -224,8 +224,11 @@ func TestGetCheckInsLocationRangeCSV(t *testing.T) {
 	testEnv, testApp := setup(t)
 	defer testEnv.teardown()
 
-	amount := 10
-	testEnv.createCheckIns(testEnv.fixtures.DefaultLocation, 1, amount)
+	extraSchool := testEnv.createSchools(1)[0]
+
+	amount1, amount2 := 10, 5
+	testEnv.createCheckIns(testEnv.fixtures.DefaultLocation, 1, amount1)
+	testEnv.createCheckIns(testEnv.fixtures.DefaultLocation, extraSchool.ID, amount2)
 
 	startDate := testApp.getTimeNowUTC().AddDate(0, 0, -1).Format(constants.DateFormat)
 	endDate := testApp.getTimeNowUTC().AddDate(0, 0, 1).Format(constants.DateFormat)
@@ -255,21 +258,22 @@ func TestGetCheckInsLocationRangeCSV(t *testing.T) {
 
 		rsData, _ := httptools.ReadCSV(rs.Body)
 
-		expectedHeaders := []string{"datetime", "capacity", "Andere"}
+		expectedHeaders := []string{"datetime", "capacity", "Andere", extraSchool.Name}
 
 		assert.Equal(t, http.StatusOK, rs.StatusCode)
 		assert.Equal(t, "text/csv", rs.Header.Get("content-type"))
 		assert.Equal(t, expectedHeaders, rsData[0])
 		assert.Equal(t, 4, len(rsData))
+		assert.Equal(t, len(rsData[0]), len(rsData[1]))
 
 		// yesterday
-		fetchedTimeYesterday, _ := time.Parse(time.RFC3339, rsData[1][0])
+		fetchedTimeYesterday, _ := time.Parse(constants.DateFormat, rsData[1][0])
 		assert.Equal(t, startDate, fetchedTimeYesterday.Format(constants.DateFormat))
 		assert.Equal(t, "0", rsData[1][1])
 		assert.Equal(t, "0", rsData[1][2])
 
 		// today
-		fetchedTimeToday, _ := time.Parse(time.RFC3339, rsData[2][0])
+		fetchedTimeToday, _ := time.Parse(constants.DateFormat, rsData[2][0])
 		assert.Equal(
 			t,
 			testApp.getTimeNowUTC().Format(constants.DateFormat),
@@ -280,10 +284,11 @@ func TestGetCheckInsLocationRangeCSV(t *testing.T) {
 			strconv.Itoa(int(testEnv.fixtures.DefaultLocation.Capacity)),
 			rsData[2][1],
 		)
-		assert.Equal(t, strconv.Itoa(amount), rsData[2][2])
+		assert.Equal(t, strconv.Itoa(amount1), rsData[2][2])
+		assert.Equal(t, strconv.Itoa(amount2), rsData[2][3])
 
 		// tomorrow
-		fetchedTimeTomorrow, _ := time.Parse(time.RFC3339, rsData[3][0])
+		fetchedTimeTomorrow, _ := time.Parse(constants.DateFormat, rsData[3][0])
 		assert.Equal(t, endDate, fetchedTimeTomorrow.Format(constants.DateFormat))
 		assert.Equal(t, "0", rsData[3][1])
 		assert.Equal(t, "0", rsData[3][2])
