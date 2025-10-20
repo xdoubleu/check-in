@@ -74,7 +74,7 @@ func (service LocationService) GetCheckInsEntriesDay(
 		locationsTimeZoneMap[location.ID] = location.TimeZone
 	}
 
-	g := grapher.New[int](grapher.Cumulative, grapher.None, time.RFC3339, time.Second)
+	g := grapher.New[int](grapher.Cumulative, grapher.PreviousValue, time.RFC3339, time.Second)
 	capacitiesGrapher := grapher.New[int](
 		grapher.Normal,
 		grapher.None,
@@ -83,12 +83,12 @@ func (service LocationService) GetCheckInsEntriesDay(
 	)
 
 	for _, checkIn := range checkIns {
-		datetime := timetools.LocationIndependentTime(
+		g.AddPoint(checkIn.CreatedAt.Time, 1, checkIn.SchoolName)
+		capacitiesGrapher.AddPoint(
 			checkIn.CreatedAt.Time,
-			locationsTimeZoneMap[checkIn.LocationID],
+			int(checkIn.Capacity),
+			checkIn.LocationID,
 		)
-		g.AddPoint(datetime, 1, checkIn.SchoolName)
-		capacitiesGrapher.AddPoint(datetime, int(checkIn.Capacity), checkIn.LocationID)
 	}
 
 	dateStrings, valueMap := g.ToSlices()
