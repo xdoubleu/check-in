@@ -285,7 +285,7 @@ func TestGetCheckInsLocationRangeCSV(t *testing.T) {
 			rsData[2][1],
 		)
 		assert.Equal(t, strconv.Itoa(amount1), rsData[2][2])
-		assert.Equal(t, strconv.Itoa(amount1), rsData[3][2])
+		assert.Equal(t, strconv.Itoa(amount2), rsData[2][3])
 
 		// tomorrow
 		fetchedTimeTomorrow, _ := time.Parse(time.RFC3339, rsData[3][0])
