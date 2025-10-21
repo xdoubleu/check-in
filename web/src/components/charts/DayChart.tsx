@@ -88,6 +88,7 @@ export default function DayChart({
     return (
       <>
         <Filter date={date} setDate={setDate} />
+        <br />
         <NoDataFound />
       </>
     )
