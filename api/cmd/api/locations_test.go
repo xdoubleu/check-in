@@ -73,17 +73,17 @@ func YesterdayFullAt(t *testing.T, testEnv TestEnv, testApp Application) {
 	assert.Equal(t, now.In(loc).Hour(), rsData.YesterdayFullAt.Time.Hour())
 }
 
-/* temp disabled
 func TestGetCheckInsLocationRangeRawSingle(t *testing.T) {
 	runForAllTimes(t, GetCheckInsLocationRangeRawSingle)
-} */
+}
 
 func GetCheckInsLocationRangeRawSingle(
 	t *testing.T,
 	testEnv TestEnv,
 	testApp Application,
 ) {
-	testEnv.createCheckIns(testEnv.fixtures.DefaultLocation, int64(1), 10)
+	amountCheckIns := 10
+	testEnv.createCheckIns(testEnv.fixtures.DefaultLocation, int64(1), amountCheckIns)
 
 	now := testApp.getTimeNowUTC()
 	startDate := timetools.StartOfDay(now.Add(-24 * time.Hour))
@@ -117,33 +117,30 @@ func GetCheckInsLocationRangeRawSingle(
 		err := httptools.ReadJSON(rs.Body, &rsData)
 		require.Nil(t, err)
 
-		assert.Equal(
-			t,
-			0,
-			rsData.CapacitiesPerLocation[testEnv.fixtures.DefaultLocation.ID][0],
-		)
-		assert.Equal(t, 0, rsData.ValuesPerSchool["Andere"][0])
+		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
+		formattedNow := now.In(loc).Format(constants.DateFormat)
+		for i, dateStr := range rsData.Dates {
+			expectedCapacity := 0
+			expectedCheckIns := 0
 
-		assert.Equal(
-			t,
-			int(testEnv.fixtures.DefaultLocation.Capacity),
-			rsData.CapacitiesPerLocation[testEnv.fixtures.DefaultLocation.ID][1],
-		)
-		assert.Equal(t, 10, rsData.ValuesPerSchool["Andere"][1])
+			if dateStr == formattedNow {
+				expectedCapacity = int(testEnv.fixtures.DefaultLocation.Capacity)
+				expectedCheckIns = amountCheckIns
+			}
 
-		assert.Equal(
-			t,
-			0,
-			rsData.CapacitiesPerLocation[testEnv.fixtures.DefaultLocation.ID][2],
-		)
-		assert.Equal(t, 0, rsData.ValuesPerSchool["Andere"][2])
+			assert.Equal(
+				t,
+				expectedCapacity,
+				rsData.CapacitiesPerLocation[testEnv.fixtures.DefaultLocation.ID][i],
+			)
+			assert.Equal(t, expectedCheckIns, rsData.ValuesPerSchool["Andere"][i])
+		}
 	}
 }
 
-/* temp disabled
 func TestGetCheckInsLocationRangeRawMultiple(t *testing.T) {
 	runForAllTimes(t, GetCheckInsLocationRangeRawMultiple)
-} */
+}
 
 func GetCheckInsLocationRangeRawMultiple(
 	t *testing.T,
@@ -152,8 +149,9 @@ func GetCheckInsLocationRangeRawMultiple(
 ) {
 	location := testEnv.createLocations(1)[0]
 
-	testEnv.createCheckIns(testEnv.fixtures.DefaultLocation, int64(1), 10)
-	testEnv.createCheckIns(location, int64(1), 10)
+	amountCheckIns1, amountCheckIns2 := 10, 5
+	testEnv.createCheckIns(testEnv.fixtures.DefaultLocation, int64(1), amountCheckIns1)
+	testEnv.createCheckIns(location, int64(1), amountCheckIns2)
 
 	now := testApp.getTimeNowUTC()
 	startDate := timetools.StartOfDay(now.Add(-24 * time.Hour))
@@ -192,31 +190,32 @@ func GetCheckInsLocationRangeRawMultiple(
 		err := httptools.ReadJSON(rs.Body, &rsData)
 		require.Nil(t, err)
 
-		assert.Equal(
-			t,
-			0,
-			rsData.CapacitiesPerLocation[testEnv.fixtures.DefaultLocation.ID][0],
-		)
-		assert.Equal(t, 0, rsData.ValuesPerSchool["Andere"][0])
+		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
+		formattedNow := now.In(loc).Format(constants.DateFormat)
+		for i, dateStr := range rsData.Dates {
+			expectedCapacity1, expectedCapacity2 := 0, 0
+			expectedCheckIns1, expectedCheckIns2 := 0, 0
 
-		assert.Equal(
-			t,
-			int(testEnv.fixtures.DefaultLocation.Capacity),
-			rsData.CapacitiesPerLocation[testEnv.fixtures.DefaultLocation.ID][1],
-		)
-		assert.Equal(
-			t,
-			int(location.Capacity),
-			rsData.CapacitiesPerLocation[location.ID][1],
-		)
-		assert.Equal(t, 20, rsData.ValuesPerSchool["Andere"][1])
+			if dateStr == formattedNow {
+				expectedCapacity1 = int(testEnv.fixtures.DefaultLocation.Capacity)
+				expectedCapacity2 = int(location.Capacity)
 
-		assert.Equal(
-			t,
-			0,
-			rsData.CapacitiesPerLocation[testEnv.fixtures.DefaultLocation.ID][2],
-		)
-		assert.Equal(t, 0, rsData.ValuesPerSchool["Andere"][2])
+				expectedCheckIns1 = amountCheckIns1
+				expectedCheckIns2 = amountCheckIns2
+			}
+
+			assert.Equal(
+				t,
+				expectedCapacity1,
+				rsData.CapacitiesPerLocation[testEnv.fixtures.DefaultLocation.ID][i],
+			)
+			assert.Equal(
+				t,
+				expectedCapacity2,
+				rsData.CapacitiesPerLocation[location.ID][i],
+			)
+			assert.Equal(t, expectedCheckIns1+expectedCheckIns2, rsData.ValuesPerSchool["Andere"][i])
+		}
 	}
 }
 
@@ -516,10 +515,9 @@ func TestGetCheckInsLocationRangeAccess(t *testing.T) {
 	mt.Do(t)
 }
 
-/* temp disabled
 func TestGetCheckInsLocationDayRawSingle(t *testing.T) {
 	runForAllTimes(t, GetCheckInsLocationDayRawSingle)
-} */
+}
 
 func GetCheckInsLocationDayRawSingle(
 	t *testing.T,
@@ -569,17 +567,17 @@ func GetCheckInsLocationDayRawSingle(
 			value += val
 		}
 
+		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
 		time, _ := time.Parse(time.RFC3339, rsData.Dates[0])
-		shared.CheckTime(t, date, time)
+		shared.CheckTime(t, date.In(loc), time)
 		assert.Equal(t, 20, capacity)
 		assert.Equal(t, amount, value)
 	}
 }
 
-/* temp disabled
 func TestGetCheckInsLocationDayRawMultiple(t *testing.T) {
 	runForAllTimes(t, GetCheckInsLocationDayRawMultiple)
-} */
+}
 
 func GetCheckInsLocationDayRawMultiple(
 	t *testing.T,
@@ -640,8 +638,9 @@ func GetCheckInsLocationDayRawMultiple(
 			value += val
 		}
 
+		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
 		time, _ := time.Parse(time.RFC3339, rsData.Dates[0])
-		shared.CheckTime(t, date, time)
+		shared.CheckTime(t, date.In(loc), time)
 		assert.Equal(t, 20, capacity0)
 		assert.Equal(
 			t,
