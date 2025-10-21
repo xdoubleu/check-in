@@ -75,18 +75,16 @@ func (service LocationService) GetCheckInsEntriesDay(
 		locationsTimeZoneMap[location.ID] = location.TimeZone
 	}
 
-	dateFormat := "2006-01-02 15:04"
-
 	g := grapher.New[int](
 		grapher.Cumulative,
 		grapher.PreviousValue,
-		dateFormat,
+		constants.DayRangeFormat,
 		time.Minute,
 	)
 	capacitiesGrapher := grapher.New[int](
 		grapher.Normal,
 		grapher.None,
-		dateFormat,
+		constants.DayRangeFormat,
 		time.Minute,
 	)
 
