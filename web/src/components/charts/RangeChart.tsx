@@ -118,7 +118,7 @@ export default function RangeChart({
           setStartDate={setStartDate}
           setEndDate={setEndDate}
         />
-        <br/>
+        <br />
         <NoDataFound />
       </>
     )
