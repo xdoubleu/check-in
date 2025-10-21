@@ -572,7 +572,7 @@ func GetCheckInsLocationDayRawSingle(
 		}
 
 		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
-		time, _ := time.Parse(time.RFC3339, rsData.Dates[0])
+		time, _ := time.Parse(constants.DayRangeFormat, rsData.Dates[0])
 		shared.CheckTime(t, date.In(loc), time)
 		assert.Equal(t, 20, capacity)
 		assert.Equal(t, amount, value)
@@ -643,7 +643,7 @@ func GetCheckInsLocationDayRawMultiple(
 		}
 
 		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
-		time, _ := time.Parse(time.RFC3339, rsData.Dates[0])
+		time, _ := time.Parse(constants.DayRangeFormat, rsData.Dates[0])
 		shared.CheckTime(t, date.In(loc), time)
 		assert.Equal(t, 20, capacity0)
 		assert.Equal(
