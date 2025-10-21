@@ -214,7 +214,11 @@ func GetCheckInsLocationRangeRawMultiple(
 				expectedCapacity2,
 				rsData.CapacitiesPerLocation[location.ID][i],
 			)
-			assert.Equal(t, expectedCheckIns1+expectedCheckIns2, rsData.ValuesPerSchool["Andere"][i])
+			assert.Equal(
+				t,
+				expectedCheckIns1+expectedCheckIns2,
+				rsData.ValuesPerSchool["Andere"][i],
+			)
 		}
 	}
 }
