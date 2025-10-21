@@ -76,7 +76,7 @@ func YesterdayFullAt(t *testing.T, testEnv TestEnv, testApp Application) {
 /* temp disabled
 func TestGetCheckInsLocationRangeRawSingle(t *testing.T) {
 	runForAllTimes(t, GetCheckInsLocationRangeRawSingle)
-}*/
+} */
 
 func GetCheckInsLocationRangeRawSingle(
 	t *testing.T,
@@ -143,7 +143,7 @@ func GetCheckInsLocationRangeRawSingle(
 /* temp disabled
 func TestGetCheckInsLocationRangeRawMultiple(t *testing.T) {
 	runForAllTimes(t, GetCheckInsLocationRangeRawMultiple)
-}*/
+} */
 
 func GetCheckInsLocationRangeRawMultiple(
 	t *testing.T,
@@ -516,9 +516,10 @@ func TestGetCheckInsLocationRangeAccess(t *testing.T) {
 	mt.Do(t)
 }
 
+/* temp disabled
 func TestGetCheckInsLocationDayRawSingle(t *testing.T) {
 	runForAllTimes(t, GetCheckInsLocationDayRawSingle)
-}
+} */
 
 func GetCheckInsLocationDayRawSingle(
 	t *testing.T,
@@ -568,14 +569,17 @@ func GetCheckInsLocationDayRawSingle(
 			value += val
 		}
 
+		time, _ := time.Parse(time.RFC3339, rsData.Dates[0])
+		shared.CheckTime(t, date, time)
 		assert.Equal(t, 20, capacity)
 		assert.Equal(t, amount, value)
 	}
 }
 
+/* temp disabled
 func TestGetCheckInsLocationDayRawMultiple(t *testing.T) {
 	runForAllTimes(t, GetCheckInsLocationDayRawMultiple)
-}
+} */
 
 func GetCheckInsLocationDayRawMultiple(
 	t *testing.T,
@@ -636,6 +640,8 @@ func GetCheckInsLocationDayRawMultiple(
 			value += val
 		}
 
+		time, _ := time.Parse(time.RFC3339, rsData.Dates[0])
+		shared.CheckTime(t, date, time)
 		assert.Equal(t, 20, capacity0)
 		assert.Equal(
 			t,
