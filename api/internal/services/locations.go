@@ -79,13 +79,13 @@ func (service LocationService) GetCheckInsEntriesDay(
 		grapher.Cumulative,
 		grapher.PreviousValue,
 		time.RFC3339,
-		time.Second,
+		time.Minute,
 	)
 	capacitiesGrapher := grapher.New[int](
 		grapher.Normal,
 		grapher.None,
 		time.RFC3339,
-		time.Second,
+		time.Minute,
 	)
 
 	for _, checkIn := range checkIns {
