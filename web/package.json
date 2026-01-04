@@ -72,7 +72,7 @@
     "next-router-mock": "1.0.5",
     "npm-package-json-lint": "9.0.0",
     "openapi-typescript": "7.10",
-    "prettier": "3.6.2",
+    "prettier": "3.7.4",
     "ts-jest": "29.4.6",
     "typescript-eslint": "8.45.0"
   },
