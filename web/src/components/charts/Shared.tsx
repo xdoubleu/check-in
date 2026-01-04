@@ -19,7 +19,7 @@ export interface ChartDataEntry {
 export type ChartData = ChartDataEntry[]
 
 const RESPONSIVE_CONTAINER_PROPS = {
-  width: "100%",
+  width: "100%" as `${number}%`,
   height: 500,
   aspect: 3
 }
