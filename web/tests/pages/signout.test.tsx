@@ -1,7 +1,6 @@
 import { render, waitFor } from "test-utils"
 import { getMyUser, signOut } from "api-wrapper"
 import SignOut from "pages/signout"
-import React from "react"
 import mockRouter from "next-router-mock"
 import { mocked } from "jest-mock"
 import { noUserMock } from "mocks"
