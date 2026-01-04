@@ -13,8 +13,8 @@ import (
 	"github.com/xdoubleu/essentia/v2/pkg/test"
 
 	"check-in/api/internal/dtos"
+	"check-in/api/internal/helpers"
 	"check-in/api/internal/models"
-	"check-in/api/internal/shared"
 )
 
 func TestGetSortedSchoolsOK(t *testing.T) {
@@ -98,7 +98,7 @@ func TestCreateCheckIn(t *testing.T) {
 	assert.Equal(t, testEnv.fixtures.DefaultLocation.ID, rsData.LocationID)
 	assert.Equal(t, testEnv.fixtures.DefaultLocation.Capacity, rsData.Capacity)
 	loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
-	shared.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData.CreatedAt.Time)
+	helpers.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData.CreatedAt.Time)
 }
 
 func TestCreateCheckInAndere(t *testing.T) {
@@ -129,7 +129,7 @@ func TestCreateCheckInAndere(t *testing.T) {
 	assert.Equal(t, testEnv.fixtures.DefaultLocation.ID, rsData.LocationID)
 	assert.Equal(t, testEnv.fixtures.DefaultLocation.Capacity, rsData.Capacity)
 	loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
-	shared.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData.CreatedAt.Time)
+	helpers.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData.CreatedAt.Time)
 }
 
 func TestCreateCheckInAboveCap(t *testing.T) {

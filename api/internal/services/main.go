@@ -5,8 +5,8 @@ import (
 	"log/slog"
 
 	"check-in/api/internal/config"
+	"check-in/api/internal/helpers"
 	"check-in/api/internal/repositories"
-	"check-in/api/internal/shared"
 )
 
 type Services struct {
@@ -24,7 +24,7 @@ func New(
 	logger *slog.Logger,
 	config config.Config,
 	repositories repositories.Repositories,
-	utcNowTimeProvider shared.UTCNowTimeProvider,
+	utcNowTimeProvider helpers.UTCNowTimeProvider,
 ) Services {
 	websocket := NewWebSocketService(logger, []string{config.WebURL})
 	state := NewStateService(ctx, logger, repositories.State, websocket)

@@ -13,9 +13,9 @@ import (
 
 	"check-in/api/internal/constants"
 	"check-in/api/internal/dtos"
+	"check-in/api/internal/helpers"
 	"check-in/api/internal/models"
 	"check-in/api/internal/repositories"
-	"check-in/api/internal/shared"
 )
 
 type LocationService struct {
@@ -24,7 +24,7 @@ type LocationService struct {
 	schools       SchoolService
 	users         UserService
 	websocket     *WebSocketService
-	getTimeNowUTC shared.UTCNowTimeProvider
+	getTimeNowUTC helpers.UTCNowTimeProvider
 }
 
 func (service *LocationService) InitializeWS(ctx context.Context) error {

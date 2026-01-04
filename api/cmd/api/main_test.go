@@ -18,8 +18,8 @@ import (
 
 	"check-in/api/internal/config"
 	"check-in/api/internal/dtos"
+	"check-in/api/internal/helpers"
 	"check-in/api/internal/models"
-	"check-in/api/internal/shared"
 )
 
 type TestEnv struct {
@@ -47,7 +47,7 @@ type Fixtures struct {
 var cfg config.Config        //nolint:gochecknoglobals //required
 var postgresDB *pgxpool.Pool //nolint:gochecknoglobals //required
 
-var timesToCheck = []shared.LocalNowTimeProvider{ //nolint:gochecknoglobals //required
+var timesToCheck = []helpers.LocalNowTimeProvider{ //nolint:gochecknoglobals //required
 	time.Now,
 	func() time.Time { return getTimeNow(23, false, "America/Los_Angeles") },
 	func() time.Time { return getTimeNow(00, true, "America/Los_Angeles") },
@@ -398,7 +398,7 @@ func getTimeNow(hour int, nextDay bool, tz string) time.Time {
 }
 
 func setupSpecificTimeProvider(
-	timeProvider shared.LocalNowTimeProvider,
+	timeProvider helpers.LocalNowTimeProvider,
 ) (TestEnv, Application) {
 	testApp := NewApp(
 		slog.New(slog.NewTextHandler(os.Stdout, nil)),

@@ -19,9 +19,9 @@ import (
 	"github.com/xdoubleu/essentia/v2/pkg/sentrytools"
 
 	"check-in/api/internal/config"
+	"check-in/api/internal/helpers"
 	"check-in/api/internal/repositories"
 	"check-in/api/internal/services"
-	"check-in/api/internal/shared"
 )
 
 //go:embed migrations/*.sql
@@ -33,7 +33,7 @@ type Application struct {
 	ctxCancel     context.CancelFunc
 	db            postgres.DB
 	config        config.Config
-	getTimeNowUTC shared.UTCNowTimeProvider
+	getTimeNowUTC helpers.UTCNowTimeProvider
 	services      services.Services
 }
 
@@ -83,7 +83,7 @@ func NewApp(
 	logger *slog.Logger,
 	cfg config.Config,
 	db postgres.DB,
-	localNowTimeProvider shared.LocalNowTimeProvider,
+	localNowTimeProvider helpers.LocalNowTimeProvider,
 ) *Application {
 	//nolint:exhaustruct //other fields are optional
 	app := &Application{
@@ -98,7 +98,7 @@ func NewApp(
 	return app
 }
 
-func (app *Application) getUTCNowTimeProvider() shared.UTCNowTimeProvider {
+func (app *Application) getUTCNowTimeProvider() helpers.UTCNowTimeProvider {
 	return func() time.Time { return app.getTimeNowUTC() }
 }
 

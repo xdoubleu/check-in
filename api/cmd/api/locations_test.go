@@ -19,8 +19,8 @@ import (
 
 	"check-in/api/internal/constants"
 	"check-in/api/internal/dtos"
+	"check-in/api/internal/helpers"
 	"check-in/api/internal/models"
-	"check-in/api/internal/shared"
 )
 
 func TestYesterdayFullAt(t *testing.T) {
@@ -573,7 +573,7 @@ func GetCheckInsLocationDayRawSingle(
 
 		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
 		time, _ := time.Parse(constants.DayRangeFormat, rsData.Dates[0])
-		shared.CheckTime(t, date.In(loc), time)
+		helpers.CheckTime(t, date.In(loc), time)
 		assert.Equal(t, 20, capacity)
 		assert.Equal(t, amount, value)
 	}
@@ -644,7 +644,7 @@ func GetCheckInsLocationDayRawMultiple(
 
 		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
 		time, _ := time.Parse(constants.DayRangeFormat, rsData.Dates[0])
-		shared.CheckTime(t, date.In(loc), time)
+		helpers.CheckTime(t, date.In(loc), time)
 		assert.Equal(t, 20, capacity0)
 		assert.Equal(
 			t,
@@ -920,7 +920,7 @@ func GetAllCheckInsToday(t *testing.T, testEnv TestEnv, testApp Application) {
 		assert.Equal(t, testEnv.fixtures.DefaultLocation.ID, rsData[0].LocationID)
 		assert.Equal(t, "Andere", rsData[0].SchoolName)
 		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
-		shared.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData[0].CreatedAt.Time)
+		helpers.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData[0].CreatedAt.Time)
 	}
 }
 
@@ -1059,7 +1059,7 @@ func TestDeleteCheckIn(t *testing.T) {
 		assert.Equal(t, testEnv.fixtures.DefaultLocation.ID, rsData.LocationID)
 		assert.Equal(t, "Andere", rsData.SchoolName)
 		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
-		shared.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData.CreatedAt.Time)
+		helpers.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData.CreatedAt.Time)
 	}
 }
 

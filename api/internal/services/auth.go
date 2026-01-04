@@ -14,16 +14,16 @@ import (
 	"github.com/xhit/go-str2duration/v2"
 
 	"check-in/api/internal/dtos"
+	"check-in/api/internal/helpers"
 	"check-in/api/internal/models"
 	"check-in/api/internal/repositories"
-	"check-in/api/internal/shared"
 )
 
 type AuthService struct {
 	auth          repositories.AuthRepository
 	users         UserService
 	locations     LocationService
-	getTimeNowUTC shared.UTCNowTimeProvider
+	getTimeNowUTC helpers.UTCNowTimeProvider
 }
 
 func (service AuthService) SignInUser(
