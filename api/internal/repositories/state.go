@@ -48,6 +48,10 @@ func (repo StateRepository) Get(
 			state.IsMaintenance, err = strconv.ParseBool(value)
 		}
 
+		if key == models.IsMemoryProfEnabledKey {
+			state.IsMemoryProfEnabled, err = strconv.ParseBool(value)
+		}
+
 		if err != nil {
 			return nil, postgres.PgxErrorToHTTPError(err)
 		}
