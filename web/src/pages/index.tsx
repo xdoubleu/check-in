@@ -87,7 +87,7 @@ export default function CheckIn() {
     }
 
     return () => {
-      if (webSocket && webSocket.readyState === 1) {
+      if (webSocket?.readyState === 1) {
         webSocket.close()
       }
     }
