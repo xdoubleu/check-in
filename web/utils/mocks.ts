@@ -63,6 +63,7 @@ export async function stateMock(): Promise<APIResponse<State>> {
     ok: true,
     data: {
       isMaintenance: false,
+      isMemoryProfEnabled: false,
       isDatabaseActive: true
     }
   })

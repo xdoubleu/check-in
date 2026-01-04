@@ -1,13 +1,14 @@
 package main
 
 import (
-	"check-in/api/internal/dtos"
 	"net/http"
 	"net/http/pprof"
 
 	"github.com/getsentry/sentry-go"
 	"github.com/justinas/alice"
 	"github.com/xdoubleu/essentia/v2/pkg/middleware"
+
+	"check-in/api/internal/dtos"
 )
 
 func (app *Application) routes() http.Handler {
@@ -82,8 +83,9 @@ func (app *Application) pprofMiddleware(next http.HandlerFunc) http.HandlerFunc 
 		}
 
 		user, err := app.services.Auth.SignInUser(r.Context(), dtos.SignInDto{
-			Username: username,
-			Password: password,
+			Username:   username,
+			Password:   password,
+			RememberMe: false,
 		})
 
 		if err != nil {
