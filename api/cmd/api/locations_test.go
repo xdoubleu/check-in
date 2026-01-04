@@ -9,13 +9,13 @@ import (
 	"testing"
 	"time"
 
-	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
-	errortools "github.com/XDoubleU/essentia/pkg/errors"
-	"github.com/XDoubleU/essentia/pkg/test"
-	timetools "github.com/XDoubleU/essentia/pkg/time"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/xdoubleu/essentia/v2/pkg/communication/httptools"
+	"github.com/xdoubleu/essentia/v2/pkg/errortools"
+	"github.com/xdoubleu/essentia/v2/pkg/test"
+	"github.com/xdoubleu/essentia/v2/pkg/timetools"
 
 	"check-in/api/internal/constants"
 	"check-in/api/internal/dtos"

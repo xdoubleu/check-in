@@ -5,8 +5,8 @@ import (
 	"log/slog"
 	"net/http"
 
-	wstools "github.com/XDoubleU/essentia/pkg/communication/ws"
-	errortools "github.com/XDoubleU/essentia/pkg/errors"
+	"github.com/xdoubleu/essentia/v2/pkg/communication/wstools"
+	"github.com/xdoubleu/essentia/v2/pkg/errortools"
 
 	"check-in/api/internal/dtos"
 	"check-in/api/internal/models"

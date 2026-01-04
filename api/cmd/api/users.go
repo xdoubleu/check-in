@@ -3,9 +3,9 @@ package main
 import (
 	"net/http"
 
-	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
-	"github.com/XDoubleU/essentia/pkg/context"
-	"github.com/XDoubleU/essentia/pkg/parse"
+	"github.com/xdoubleu/essentia/v2/pkg/communication/httptools"
+	"github.com/xdoubleu/essentia/v2/pkg/contexttools"
+	"github.com/xdoubleu/essentia/v2/pkg/parse"
 
 	"check-in/api/internal/constants"
 	"check-in/api/internal/dtos"
@@ -47,7 +47,7 @@ func (app *Application) usersRoutes(mux *http.ServeMux) {
 // @Router		/current-user [get].
 func (app *Application) getInfoLoggedInUserHandler(w http.ResponseWriter,
 	r *http.Request) {
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 
 	err := httptools.WriteJSON(w, http.StatusOK, user, nil)
 	if err != nil {
@@ -101,7 +101,7 @@ func (app *Application) getPaginatedManagerUsersHandler(w http.ResponseWriter,
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	result, err := getAllPaginated(
 		r.Context(),
 		app.services.Users,

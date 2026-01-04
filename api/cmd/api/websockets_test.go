@@ -5,9 +5,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/XDoubleU/essentia/pkg/test"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/xdoubleu/essentia/v2/pkg/test"
 
 	"check-in/api/internal/dtos"
 	"check-in/api/internal/models"
@@ -174,7 +174,8 @@ func TestStateUpdate(t *testing.T) {
 		_, err := testApp.services.State.UpdateState(
 			context.Background(),
 			dtos.StateDto{
-				IsMaintenance: true,
+				IsMaintenance:       true,
+				IsMemoryProfEnabled: true,
 			},
 		)
 		require.Nil(t, err)

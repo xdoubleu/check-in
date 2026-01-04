@@ -3,9 +3,9 @@ package main
 import (
 	"net/http"
 
-	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
-	"github.com/XDoubleU/essentia/pkg/context"
-	"github.com/XDoubleU/essentia/pkg/parse"
+	"github.com/xdoubleu/essentia/v2/pkg/communication/httptools"
+	"github.com/xdoubleu/essentia/v2/pkg/contexttools"
+	"github.com/xdoubleu/essentia/v2/pkg/parse"
 
 	"check-in/api/internal/constants"
 	"check-in/api/internal/dtos"
@@ -49,7 +49,7 @@ func (app *Application) getPaginatedSchoolsHandler(w http.ResponseWriter,
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	result, err := getAllPaginated(
 		r.Context(),
 		app.services.Schools,

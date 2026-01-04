@@ -3,8 +3,8 @@ package repositories
 import (
 	"context"
 
-	"github.com/XDoubleU/essentia/pkg/database"
-	"github.com/XDoubleU/essentia/pkg/database/postgres"
+	"github.com/xdoubleu/essentia/v2/pkg/database"
+	"github.com/xdoubleu/essentia/v2/pkg/database/postgres"
 
 	"check-in/api/internal/dtos"
 	"check-in/api/internal/models"

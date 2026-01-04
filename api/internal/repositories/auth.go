@@ -4,7 +4,7 @@ import (
 	"context"
 	"crypto/sha256"
 
-	"github.com/XDoubleU/essentia/pkg/database/postgres"
+	"github.com/xdoubleu/essentia/v2/pkg/database/postgres"
 
 	"check-in/api/internal/models"
 	"check-in/api/internal/shared"

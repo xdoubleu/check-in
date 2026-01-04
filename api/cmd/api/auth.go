@@ -3,9 +3,9 @@ package main
 import (
 	"net/http"
 
-	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
-	"github.com/XDoubleU/essentia/pkg/config"
-	contexttools "github.com/XDoubleU/essentia/pkg/context"
+	"github.com/xdoubleu/essentia/v2/pkg/communication/httptools"
+	"github.com/xdoubleu/essentia/v2/pkg/config"
+	"github.com/xdoubleu/essentia/v2/pkg/contexttools"
 
 	"check-in/api/internal/constants"
 	"check-in/api/internal/dtos"
