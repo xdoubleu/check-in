@@ -108,6 +108,7 @@ func (service AuthService) DeleteCookie(
 	ctx context.Context,
 	scope models.Scope,
 	tokenValue string,
+	secure bool,
 ) (*http.Cookie, error) {
 	err := service.auth.DeleteToken(
 		ctx,
@@ -125,6 +126,7 @@ func (service AuthService) DeleteCookie(
 		MaxAge:   -1,
 		SameSite: http.SameSiteStrictMode,
 		HttpOnly: true,
+		Secure:   secure,
 		Path:     "/",
 	}, nil
 }

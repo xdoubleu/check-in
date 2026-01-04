@@ -99,10 +99,12 @@ func (app *Application) signOutHandler(w http.ResponseWriter, r *http.Request) {
 	accessToken, _ := r.Cookie("accessToken")
 	refreshToken, _ := r.Cookie("refreshToken")
 
+	secure := app.config.Env == config.ProdEnv
 	deleteAccessToken, err := app.services.Auth.DeleteCookie(
 		r.Context(),
 		models.AccessScope,
 		accessToken.Value,
+		secure,
 	)
 	if err != nil {
 		httptools.ServerErrorResponse(w, r, err)
@@ -119,6 +121,7 @@ func (app *Application) signOutHandler(w http.ResponseWriter, r *http.Request) {
 		r.Context(),
 		models.RefreshScope,
 		refreshToken.Value,
+		secure,
 	)
 	if err != nil {
 		httptools.ServerErrorResponse(w, r, err)
