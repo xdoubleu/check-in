@@ -3,8 +3,12 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "test-utils": ["../utils/test-utils"],
-      "mocks": ["../utils/mocks"]
+      "test-utils": [
+        "../utils/test-utils"
+      ],
+      "mocks": [
+        "../utils/mocks"
+      ]
     },
     "target": "es5",
     "lib": [
@@ -25,7 +29,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "declaration": true,
     "declarationMap": true,
