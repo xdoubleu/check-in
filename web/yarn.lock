@@ -11716,13 +11716,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-router-mock@npm:1.0.2":
-  version: 1.0.2
-  resolution: "next-router-mock@npm:1.0.2"
+"next-router-mock@npm:1.0.5":
+  version: 1.0.5
+  resolution: "next-router-mock@npm:1.0.5"
   peerDependencies:
     next: ">=10.0.0"
     react: ">=17.0.0"
-  checksum: 10c0/a19c0a05df90942467c0924bf95d8072d6f98152e421382ba39022d4e04e87dcd2ded818cf82f8cc6631712c2d27214cf66da957481be125880779c802870bf6
+  checksum: 10c0/ca37d925e2cff24968de6221606c06be6ddebd1d590861ed5136cbd27a38bcb81a7e31c0dd3074f39d34ae3278a3427c63746fd303f60d3474ec0fed1b5d4897
   languageName: node
   linkType: hard
 
@@ -15708,7 +15708,7 @@ __metadata:
     moment-timezone: "npm:0.6.0"
     next: "npm:15.5.8"
     next-pwa: "npm:5.6.0"
-    next-router-mock: "npm:1.0.2"
+    next-router-mock: "npm:1.0.5"
     npm-package-json-lint: "npm:9.0.0"
     openapi-typescript: "npm:7.9"
     prettier: "npm:3.6.2"
