@@ -70,7 +70,7 @@
     "jscpd": "4.0.5",
     "knip": "5.64.1",
     "next-router-mock": "1.0.5",
-    "npm-package-json-lint": "9.0.0",
+    "npm-package-json-lint": "9.1.0",
     "openapi-typescript": "7.10",
     "prettier": "3.6.2",
     "ts-jest": "29.4.6",
