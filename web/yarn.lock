@@ -2319,12 +2319,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:15.5.4":
-  version: 15.5.4
-  resolution: "@next/bundle-analyzer@npm:15.5.4"
+"@next/bundle-analyzer@npm:15.5.9":
+  version: 15.5.9
+  resolution: "@next/bundle-analyzer@npm:15.5.9"
   dependencies:
     webpack-bundle-analyzer: "npm:4.10.1"
-  checksum: 10c0/aaed6fe9cca34b12fdbf8840700ef2c6fb559b67a9a85aaf9bb6892fbce8971cfa14cd53f07f86dc57b33d129f24240a8cd4c63c0650f5096d643dc3ad8cb7c3
+  checksum: 10c0/74a6e3766d5fed3141505210d40cf6220a52346e1ce47385ac6c78f27bfb66fd61cb8fb0141a9e69f841afad2c34caba06bd507310bc1723b2bca9cddbe1a81c
   languageName: node
   linkType: hard
 
@@ -2335,18 +2335,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:15.5.4":
-  version: 15.5.4
-  resolution: "@next/eslint-plugin-next@npm:15.5.4"
+"@next/eslint-plugin-next@npm:15.5.9":
+  version: 15.5.9
+  resolution: "@next/eslint-plugin-next@npm:15.5.9"
   dependencies:
     fast-glob: "npm:3.3.1"
-  checksum: 10c0/dc90be5e86d06d61b8b5b495ed2073981ef672f707016611b47af04f15fbd6fb7c7a209d773290370e06b6409cb32b5d02146d909b3e4960750869d994b55a7b
+  checksum: 10c0/28f926063eefc50bda9fad5bd338bcd74356764f56f201fae0cecd536d09b6aa8a94dc9b8dccbfc9b3356b532c672c08226f0d6f6003c5104833a01481d88292
   languageName: node
   linkType: hard
 
-"@next/mdx@npm:15.5.4":
-  version: 15.5.4
-  resolution: "@next/mdx@npm:15.5.4"
+"@next/mdx@npm:15.5.9":
+  version: 15.5.9
+  resolution: "@next/mdx@npm:15.5.9"
   dependencies:
     source-map: "npm:^0.7.0"
   peerDependencies:
@@ -2357,7 +2357,7 @@ __metadata:
       optional: true
     "@mdx-js/react":
       optional: true
-  checksum: 10c0/d7c22b44f0eaa04afb4187bc78c2def895fc26a26ff0d6146bb38a8d8b3957196d41c7c618185fbaf13997b39abd3d7270b04ddbd2ad7ff1522d69637b230209
+  checksum: 10c0/31aa0ec7b2ad310c47992cd779447085369d99e5302a7a7bba4ab450164f2e9af597e10f01f64aa07f171ba75c8740d6568690c3229fa77690266a98895c440d
   languageName: node
   linkType: hard
 
@@ -7284,11 +7284,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:15.5.4":
-  version: 15.5.4
-  resolution: "eslint-config-next@npm:15.5.4"
+"eslint-config-next@npm:15.5.9":
+  version: 15.5.9
+  resolution: "eslint-config-next@npm:15.5.9"
   dependencies:
-    "@next/eslint-plugin-next": "npm:15.5.4"
+    "@next/eslint-plugin-next": "npm:15.5.9"
     "@rushstack/eslint-patch": "npm:^1.10.3"
     "@typescript-eslint/eslint-plugin": "npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0"
     "@typescript-eslint/parser": "npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0"
@@ -7304,7 +7304,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/5e2065ca17f16a85fdde7791b593890f8180e9c8cba7ecff12248d76afdb8f3de2c1f6f0440ac54d9fd0d2e86dbddb968bc263e77f663edaa6cc30b2a8c43b1f
+  checksum: 10c0/e74d5b402e08d79867cadf73f387f6c344dc011b84fb53a4d26d7299578fe893543e8aea59d8608f8e035a03ce124da40b1c40828a673300cd7a58923fe93bc8
   languageName: node
   linkType: hard
 
@@ -15527,8 +15527,8 @@ __metadata:
     "@eslint/js": "npm:9.37.0"
     "@mdx-js/loader": "npm:3.1.1"
     "@mdx-js/react": "npm:3.1.1"
-    "@next/bundle-analyzer": "npm:15.5.4"
-    "@next/mdx": "npm:15.5.4"
+    "@next/bundle-analyzer": "npm:15.5.9"
+    "@next/mdx": "npm:15.5.9"
     "@popperjs/core": "npm:2.11.8"
     "@sentry/nextjs": "npm:10.17.0"
     "@testing-library/dom": "npm:10.4.1"
@@ -15547,7 +15547,7 @@ __metadata:
     cpx2: "npm:8.0.0"
     cross-env: "npm:10.1.0"
     eslint: "npm:9.37.0"
-    eslint-config-next: "npm:15.5.4"
+    eslint-config-next: "npm:15.5.9"
     eslint-config-prettier: "npm:10.1.8"
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-jest-dom: "npm:5.5.0"
