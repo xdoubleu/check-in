@@ -1486,6 +1486,9 @@
                 },
                 "isMaintenance": {
                     "type": "boolean"
+                },
+                "isMemoryProfEnabled": {
+                    "type": "boolean"
                 }
             }
         },
@@ -1493,6 +1496,9 @@
             "type": "object",
             "properties": {
                 "isMaintenance": {
+                    "type": "boolean"
+                },
+                "isMemoryProfEnabled": {
                     "type": "boolean"
                 }
             }

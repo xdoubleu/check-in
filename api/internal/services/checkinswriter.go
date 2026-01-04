@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"github.com/XDoubleU/essentia/pkg/database"
-	errortools "github.com/XDoubleU/essentia/pkg/errors"
-	timetools "github.com/XDoubleU/essentia/pkg/time"
+	"github.com/xdoubleu/essentia/v2/pkg/database"
+	"github.com/xdoubleu/essentia/v2/pkg/errortools"
+	"github.com/xdoubleu/essentia/v2/pkg/timetools"
 
 	"check-in/api/internal/dtos"
 	"check-in/api/internal/models"

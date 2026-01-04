@@ -830,9 +830,11 @@ export type definitions = {
   State: {
     isDatabaseActive?: boolean;
     isMaintenance?: boolean;
+    isMemoryProfEnabled?: boolean;
   };
   StateDto: {
     isMaintenance?: boolean;
+    isMemoryProfEnabled?: boolean;
   };
   SubscribeMessageDto: {
     normalizedName?: string;

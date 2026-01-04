@@ -1,9 +1,9 @@
 package repositories
 
 import (
-	"github.com/XDoubleU/essentia/pkg/database/postgres"
+	"github.com/xdoubleu/essentia/v2/pkg/database/postgres"
 
-	"check-in/api/internal/shared"
+	"check-in/api/internal/helpers"
 )
 
 type Repositories struct {
@@ -16,7 +16,7 @@ type Repositories struct {
 	State          StateRepository
 }
 
-func New(db postgres.DB, utcNowTimeProvider shared.UTCNowTimeProvider) Repositories {
+func New(db postgres.DB, utcNowTimeProvider helpers.UTCNowTimeProvider) Repositories {
 	checkInsWriter := CheckInWriteRepository{db: db, getTimeNowUTC: utcNowTimeProvider}
 	checkIns := CheckInRepository{db: db}
 	schools := SchoolRepository{db: db}

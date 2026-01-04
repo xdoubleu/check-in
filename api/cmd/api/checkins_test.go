@@ -6,15 +6,15 @@ import (
 	"testing"
 	"time"
 
-	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
-	errortools "github.com/XDoubleU/essentia/pkg/errors"
-	"github.com/XDoubleU/essentia/pkg/test"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/xdoubleu/essentia/v2/pkg/communication/httptools"
+	"github.com/xdoubleu/essentia/v2/pkg/errortools"
+	"github.com/xdoubleu/essentia/v2/pkg/test"
 
 	"check-in/api/internal/dtos"
+	"check-in/api/internal/helpers"
 	"check-in/api/internal/models"
-	"check-in/api/internal/shared"
 )
 
 func TestGetSortedSchoolsOK(t *testing.T) {
@@ -98,7 +98,7 @@ func TestCreateCheckIn(t *testing.T) {
 	assert.Equal(t, testEnv.fixtures.DefaultLocation.ID, rsData.LocationID)
 	assert.Equal(t, testEnv.fixtures.DefaultLocation.Capacity, rsData.Capacity)
 	loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
-	shared.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData.CreatedAt.Time)
+	helpers.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData.CreatedAt.Time)
 }
 
 func TestCreateCheckInAndere(t *testing.T) {
@@ -129,7 +129,7 @@ func TestCreateCheckInAndere(t *testing.T) {
 	assert.Equal(t, testEnv.fixtures.DefaultLocation.ID, rsData.LocationID)
 	assert.Equal(t, testEnv.fixtures.DefaultLocation.Capacity, rsData.Capacity)
 	loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
-	shared.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData.CreatedAt.Time)
+	helpers.CheckTime(t, testApp.getTimeNowUTC().In(loc), rsData.CreatedAt.Time)
 }
 
 func TestCreateCheckInAboveCap(t *testing.T) {

@@ -125,6 +125,7 @@ describe("CheckIn (page)", () => {
 
     const update: State = {
       isMaintenance: true,
+      isMemoryProfEnabled: true,
       isDatabaseActive: false
     }
 

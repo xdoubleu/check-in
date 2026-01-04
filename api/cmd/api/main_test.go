@@ -10,16 +10,16 @@ import (
 	"testing"
 	"time"
 
-	configtools "github.com/XDoubleU/essentia/pkg/config"
-	"github.com/XDoubleU/essentia/pkg/database"
-	"github.com/XDoubleU/essentia/pkg/database/postgres"
-	"github.com/XDoubleU/essentia/pkg/logging"
 	"github.com/jackc/pgx/v5/pgxpool"
+	configtools "github.com/xdoubleu/essentia/v2/pkg/config"
+	"github.com/xdoubleu/essentia/v2/pkg/database"
+	"github.com/xdoubleu/essentia/v2/pkg/database/postgres"
+	"github.com/xdoubleu/essentia/v2/pkg/logging"
 
 	"check-in/api/internal/config"
 	"check-in/api/internal/dtos"
+	"check-in/api/internal/helpers"
 	"check-in/api/internal/models"
-	"check-in/api/internal/shared"
 )
 
 type TestEnv struct {
@@ -47,7 +47,7 @@ type Fixtures struct {
 var cfg config.Config        //nolint:gochecknoglobals //required
 var postgresDB *pgxpool.Pool //nolint:gochecknoglobals //required
 
-var timesToCheck = []shared.LocalNowTimeProvider{ //nolint:gochecknoglobals //required
+var timesToCheck = []helpers.LocalNowTimeProvider{ //nolint:gochecknoglobals //required
 	time.Now,
 	func() time.Time { return getTimeNow(23, false, "America/Los_Angeles") },
 	func() time.Time { return getTimeNow(00, true, "America/Los_Angeles") },
@@ -61,7 +61,8 @@ func (env *TestEnv) defaultFixtures() {
 	var err error
 
 	_, err = env.app.services.State.UpdateState(context.Background(), dtos.StateDto{
-		IsMaintenance: false,
+		IsMaintenance:       false,
+		IsMemoryProfEnabled: false,
 	})
 	if err != nil {
 		panic(err)
@@ -397,7 +398,7 @@ func getTimeNow(hour int, nextDay bool, tz string) time.Time {
 }
 
 func setupSpecificTimeProvider(
-	timeProvider shared.LocalNowTimeProvider,
+	timeProvider helpers.LocalNowTimeProvider,
 ) (TestEnv, Application) {
 	testApp := NewApp(
 		slog.New(slog.NewTextHandler(os.Stdout, nil)),

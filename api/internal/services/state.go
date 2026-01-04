@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/XDoubleU/essentia/pkg/logging"
-	"github.com/XDoubleU/essentia/pkg/sentry"
+	"github.com/xdoubleu/essentia/v2/pkg/logging"
+	"github.com/xdoubleu/essentia/v2/pkg/sentrytools"
 
 	"check-in/api/internal/dtos"
 	"check-in/api/internal/models"
@@ -89,7 +89,7 @@ func (service *StateService) get(
 }
 
 func (service *StateService) startPolling(ctx context.Context, logger *slog.Logger) {
-	sentry.GoRoutineWrapper(
+	sentrytools.GoRoutineWrapper(
 		ctx,
 		logger,
 		"State Polling",
@@ -129,9 +129,19 @@ func (service *StateService) UpdateState(
 		return nil, err
 	}
 
+	err = service.state.UpdateKey(
+		ctx,
+		models.IsMemoryProfEnabledKey,
+		strconv.FormatBool(stateDto.IsMemoryProfEnabled),
+	)
+	if err != nil {
+		return nil, err
+	}
+
 	newState, changed := service.Current.update(models.State{
-		IsMaintenance:    stateDto.IsMaintenance,
-		IsDatabaseActive: service.state.IsDatabaseActive(ctx),
+		IsMaintenance:       stateDto.IsMaintenance,
+		IsMemoryProfEnabled: stateDto.IsMemoryProfEnabled,
+		IsDatabaseActive:    service.state.IsDatabaseActive(ctx),
 	})
 
 	if changed {

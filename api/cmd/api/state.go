@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
+	"github.com/xdoubleu/essentia/v2/pkg/communication/httptools"
 
 	"check-in/api/internal/dtos"
 )

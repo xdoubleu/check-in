@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
-	"github.com/XDoubleU/essentia/pkg/context"
+	"github.com/xdoubleu/essentia/v2/pkg/communication/httptools"
+	"github.com/xdoubleu/essentia/v2/pkg/contexttools"
 
 	"check-in/api/internal/constants"
 	"check-in/api/internal/dtos"
@@ -33,7 +33,7 @@ func (app *Application) getSortedSchoolsHandler(
 	w http.ResponseWriter,
 	r *http.Request,
 ) {
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	schools, err := app.services.CheckInsWriter.GetAllSchoolsSortedByLocation(
 		r.Context(),
 		user,
@@ -72,7 +72,7 @@ func (app *Application) createCheckInHandler(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	checkInDto, err := app.services.CheckInsWriter.Create(
 		r.Context(),
 		createCheckInDto,

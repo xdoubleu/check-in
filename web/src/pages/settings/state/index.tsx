@@ -26,6 +26,7 @@ export default function StateView() {
     void updateState(data).then((response) => {
       if (response.ok) {
         setValue("isMaintenance", response.data?.isMaintenance)
+        setValue("isMemoryProfEnabled", response.data?.isMemoryProfEnabled)
       } else {
         setError("root", {
           message: (response.message as string | null) ?? "Something went wrong"
@@ -40,6 +41,7 @@ export default function StateView() {
     void getState().then((response) => {
       if (response.ok) {
         setValue("isMaintenance", response.data?.isMaintenance)
+        setValue("isMemoryProfEnabled", response.data?.isMemoryProfEnabled)
       }
     })
   }, [setValue])
@@ -57,6 +59,12 @@ export default function StateView() {
             label="Is maintenance enabled"
             type="checkbox"
             {...register("isMaintenance")}
+          ></Form.Check>
+          <Form.Check
+            id="isMemoryProfEnabled"
+            label="Is memory profiling enabled"
+            type="checkbox"
+            {...register("isMemoryProfEnabled")}
           ></Form.Check>
         </BaseForm>
       </ManagerLayout>

@@ -10,18 +10,18 @@ import (
 	"time"
 	_ "time/tzdata"
 
-	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
-	"github.com/XDoubleU/essentia/pkg/database/postgres"
-	"github.com/XDoubleU/essentia/pkg/logging"
-	sentrytools "github.com/XDoubleU/essentia/pkg/sentry"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/jackc/pgx/v5/stdlib"
 	"github.com/pressly/goose/v3"
+	"github.com/xdoubleu/essentia/v2/pkg/communication/httptools"
+	"github.com/xdoubleu/essentia/v2/pkg/database/postgres"
+	"github.com/xdoubleu/essentia/v2/pkg/logging"
+	"github.com/xdoubleu/essentia/v2/pkg/sentrytools"
 
 	"check-in/api/internal/config"
+	"check-in/api/internal/helpers"
 	"check-in/api/internal/repositories"
 	"check-in/api/internal/services"
-	"check-in/api/internal/shared"
 )
 
 //go:embed migrations/*.sql
@@ -33,7 +33,7 @@ type Application struct {
 	ctxCancel     context.CancelFunc
 	db            postgres.DB
 	config        config.Config
-	getTimeNowUTC shared.UTCNowTimeProvider
+	getTimeNowUTC helpers.UTCNowTimeProvider
 	services      services.Services
 }
 
@@ -83,7 +83,7 @@ func NewApp(
 	logger *slog.Logger,
 	cfg config.Config,
 	db postgres.DB,
-	localNowTimeProvider shared.LocalNowTimeProvider,
+	localNowTimeProvider helpers.LocalNowTimeProvider,
 ) *Application {
 	//nolint:exhaustruct //other fields are optional
 	app := &Application{
@@ -98,7 +98,7 @@ func NewApp(
 	return app
 }
 
-func (app *Application) getUTCNowTimeProvider() shared.UTCNowTimeProvider {
+func (app *Application) getUTCNowTimeProvider() helpers.UTCNowTimeProvider {
 	return func() time.Time { return app.getTimeNowUTC() }
 }
 

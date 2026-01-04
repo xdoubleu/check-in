@@ -6,9 +6,9 @@ import (
 	"sort"
 	"strconv"
 
-	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
-	"github.com/XDoubleU/essentia/pkg/context"
-	"github.com/XDoubleU/essentia/pkg/parse"
+	"github.com/xdoubleu/essentia/v2/pkg/communication/httptools"
+	"github.com/xdoubleu/essentia/v2/pkg/contexttools"
+	"github.com/xdoubleu/essentia/v2/pkg/parse"
 
 	"check-in/api/internal/constants"
 	"check-in/api/internal/dtos"
@@ -93,7 +93,7 @@ func (app *Application) getLocationCheckInsDayHandler(w http.ResponseWriter,
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	dateStrings, capacities, valueMap, err := app.services.Locations.GetCheckInsEntriesDay(
 		r.Context(),
 		user,
@@ -186,7 +186,7 @@ func (app *Application) getLocationCheckInsRangeHandler(
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	//nolint:lll //it is what it is
 	dateStrings, capacities, valueMap, err := app.services.Locations.GetCheckInsEntriesRange(
 		r.Context(),
@@ -290,7 +290,7 @@ func (app *Application) getAllCheckInsTodayHandler(w http.ResponseWriter,
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	_, checkIns, err := app.services.Locations.GetAllCheckInsOfDay(
 		r.Context(),
 		user,
@@ -335,7 +335,7 @@ func (app *Application) deleteLocationCheckInHandler(
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	checkIn, err := app.services.Locations.DeleteCheckIn(
 		r.Context(),
 		user,
@@ -369,7 +369,7 @@ func (app *Application) getLocationHandler(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	location, err := app.services.Locations.GetByID(r.Context(), user, id)
 	if err != nil {
 		httptools.HandleError(w, r, err)
@@ -400,7 +400,7 @@ func (app *Application) getPaginatedLocationsHandler(w http.ResponseWriter,
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	result, err := getAllPaginated(
 		r.Context(),
 		app.services.Locations,
@@ -428,7 +428,7 @@ func (app *Application) getPaginatedLocationsHandler(w http.ResponseWriter,
 // @Router		/all-locations [get].
 func (app *Application) getAllLocationsHandler(w http.ResponseWriter,
 	r *http.Request) {
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	locations, err := app.services.Locations.GetAll(r.Context(), user, false)
 	if err != nil {
 		httptools.ServerErrorResponse(w, r, err)
@@ -464,7 +464,7 @@ func (app *Application) createLocationHandler(w http.ResponseWriter, r *http.Req
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	location, err := app.services.Locations.Create(
 		r.Context(),
 		user,
@@ -512,7 +512,7 @@ func (app *Application) updateLocationHandler(w http.ResponseWriter,
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	location, err := app.services.Locations.Update(
 		r.Context(),
 		user,
@@ -546,7 +546,7 @@ func (app *Application) deleteLocationHandler(w http.ResponseWriter, r *http.Req
 		return
 	}
 
-	user := context.GetValue[models.User](r.Context(), constants.UserContextKey)
+	user := contexttools.GetValue[models.User](r.Context(), constants.UserContextKey)
 	location, err := app.services.Locations.Delete(r.Context(), user, id)
 	if err != nil {
 		httptools.HandleError(w, r, err)

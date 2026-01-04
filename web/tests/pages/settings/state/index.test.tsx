@@ -20,6 +20,7 @@ describe("StateView (page)", () => {
         ok: true,
         data: {
           isMaintenance: false,
+          isMemoryProfEnabled: false,
           isDatabaseActive: true
         }
       })
@@ -52,6 +53,7 @@ describe("StateView (page)", () => {
         ok: true,
         data: {
           isMaintenance: false,
+          isMemoryProfEnabled: false,
           isDatabaseActive: true
         }
       })

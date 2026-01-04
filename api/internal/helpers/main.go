@@ -1,4 +1,4 @@
-package shared
+package helpers
 
 import "time"
 

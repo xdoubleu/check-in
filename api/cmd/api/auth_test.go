@@ -4,11 +4,11 @@ import (
 	"net/http"
 	"testing"
 
-	httptools "github.com/XDoubleU/essentia/pkg/communication/http"
-	errortools "github.com/XDoubleU/essentia/pkg/errors"
-	"github.com/XDoubleU/essentia/pkg/test"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/xdoubleu/essentia/v2/pkg/communication/httptools"
+	"github.com/xdoubleu/essentia/v2/pkg/errortools"
+	"github.com/xdoubleu/essentia/v2/pkg/test"
 
 	"check-in/api/internal/dtos"
 	"check-in/api/internal/models"
