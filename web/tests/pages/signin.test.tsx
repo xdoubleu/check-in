@@ -1,7 +1,6 @@
 import userEvent from "@testing-library/user-event"
 import { render, waitFor, screen } from "test-utils"
 import SignIn from "pages/signin"
-import React from "react"
 import mockRouter from "next-router-mock"
 import { signIn } from "api-wrapper"
 import { mocked } from "jest-mock"
