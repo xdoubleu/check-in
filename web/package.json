@@ -34,7 +34,7 @@
     "react-dom": "19.2.3",
     "react-hook-form": "7.70.0",
     "react-spinners": "0.17.0",
-    "recharts": "3.6.0",
+    "recharts": "3.7.0",
     "sass": "1.97.1",
     "serve": "14.2.5",
     "typescript": "5.9.3",
