@@ -68,6 +68,8 @@ github.com/stretchr/testify v1.11.1 h1:7s2iGBzp5EwR7/aIZr8ao5+dra3wiQyKjjFuvgVKu
 github.com/stretchr/testify v1.11.1/go.mod h1:wZwfW3scLgRK+23gO65QZefKpKQRnfz6sD981Nm4B6U=
 github.com/xdoubleu/essentia/v2 v2.0.1 h1:8Dmx0TRezFnJmsrO6iFL1sgMoQHAh0M6sqGOSR6AhpE=
 github.com/xdoubleu/essentia/v2 v2.0.1/go.mod h1:LrH1eHJBWaWMhPU/p1K2n2EiUJzueKiScPwJSzKF+8M=
+github.com/xdoubleu/essentia/v2 v2.0.2 h1:mXjQ+sl2T/42BNP5uvU5rMLWnCTweEzbLQdPDhjOuLk=
+github.com/xdoubleu/essentia/v2 v2.0.2/go.mod h1:Rj7nx1FZCiIf2ZfWJawsR5RZVPeu0+sClcvtBWG1hT8=
 github.com/xhit/go-str2duration/v2 v2.1.0 h1:lxklc02Drh6ynqX+DdPyp5pCKLUQpRT8bp8Ydu2Bstc=
 github.com/xhit/go-str2duration/v2 v2.1.0/go.mod h1:ohY8p+0f07DiV6Em5LKB0s2YpLtXVyJfNt1+BlmyAsU=
 go.uber.org/goleak v1.3.0 h1:2K3zAYmnTNqV73imy9J1T3WC+gmCePx2hEGkimedGto=

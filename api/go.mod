@@ -10,7 +10,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/pressly/goose/v3 v3.26.0
 	github.com/stretchr/testify v1.11.1
-	github.com/xdoubleu/essentia/v2 v2.0.1
+	github.com/xdoubleu/essentia/v2 v2.0.2
 	github.com/xhit/go-str2duration/v2 v2.1.0
 )
 
