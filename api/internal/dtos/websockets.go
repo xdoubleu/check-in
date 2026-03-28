@@ -2,7 +2,7 @@ package dtos
 
 import (
 	"github.com/jackc/pgx/v5/pgtype"
-	"github.com/xdoubleu/essentia/v2/pkg/validate"
+	"github.com/xdoubleu/essentia/v3/pkg/validate"
 
 	"check-in/api/internal/models"
 )

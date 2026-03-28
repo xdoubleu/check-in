@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/xdoubleu/essentia/v2/pkg/database"
-	"github.com/xdoubleu/essentia/v2/pkg/errortools"
+	"github.com/xdoubleu/essentia/v3/pkg/database"
+	"github.com/xdoubleu/essentia/v3/pkg/errortools"
 	"github.com/xhit/go-str2duration/v2"
 
 	"check-in/api/internal/dtos"

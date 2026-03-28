@@ -6,10 +6,10 @@ import (
 	"slices"
 	"time"
 
-	"github.com/xdoubleu/essentia/v2/pkg/database"
-	"github.com/xdoubleu/essentia/v2/pkg/errortools"
-	"github.com/xdoubleu/essentia/v2/pkg/grapher"
-	"github.com/xdoubleu/essentia/v2/pkg/timetools"
+	"github.com/xdoubleu/essentia/v3/pkg/database"
+	"github.com/xdoubleu/essentia/v3/pkg/errortools"
+	"github.com/xdoubleu/essentia/v3/pkg/grapher"
+	"github.com/xdoubleu/essentia/v3/pkg/timetools"
 
 	"check-in/api/internal/constants"
 	"check-in/api/internal/dtos"

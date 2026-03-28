@@ -4,7 +4,7 @@ package config
 import (
 	"log/slog"
 
-	"github.com/xdoubleu/essentia/v2/pkg/config"
+	"github.com/xdoubleu/essentia/v3/pkg/config"
 )
 
 type Config struct {
