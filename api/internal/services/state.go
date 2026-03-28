@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xdoubleu/essentia/v2/pkg/logging"
-	"github.com/xdoubleu/essentia/v2/pkg/sentrytools"
+	"github.com/xdoubleu/essentia/v3/pkg/logging"
+	"github.com/xdoubleu/essentia/v3/pkg/sentrytools"
 
 	"check-in/api/internal/dtos"
 	"check-in/api/internal/models"
