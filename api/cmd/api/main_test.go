@@ -11,10 +11,10 @@ import (
 	"time"
 
 	"github.com/jackc/pgx/v5/pgxpool"
-	configtools "github.com/xdoubleu/essentia/v2/pkg/config"
-	"github.com/xdoubleu/essentia/v2/pkg/database"
-	"github.com/xdoubleu/essentia/v2/pkg/database/postgres"
-	"github.com/xdoubleu/essentia/v2/pkg/logging"
+	configtools "github.com/xdoubleu/essentia/v3/pkg/config"
+	"github.com/xdoubleu/essentia/v3/pkg/database"
+	"github.com/xdoubleu/essentia/v3/pkg/database/postgres"
+	"github.com/xdoubleu/essentia/v3/pkg/logging"
 
 	"check-in/api/internal/config"
 	"check-in/api/internal/dtos"
