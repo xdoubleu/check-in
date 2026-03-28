@@ -5,8 +5,8 @@ import (
 	"log/slog"
 	"net/http"
 
-	"github.com/xdoubleu/essentia/v2/pkg/communication/wstools"
-	"github.com/xdoubleu/essentia/v2/pkg/errortools"
+	"github.com/xdoubleu/essentia/v3/pkg/communication/wstools"
+	"github.com/xdoubleu/essentia/v3/pkg/errortools"
 
 	"check-in/api/internal/dtos"
 	"check-in/api/internal/models"
@@ -26,6 +26,7 @@ type WebSocketService struct {
 }
 
 func NewWebSocketService(
+	ctx context.Context,
 	logger *slog.Logger,
 	allowedOrigins []string,
 ) *WebSocketService {
@@ -38,6 +39,7 @@ func NewWebSocketService(
 	}
 
 	handler := wstools.CreateWebSocketHandler[dtos.SubscribeMessageDto](
+		ctx,
 		logger,
 		1,
 		100, //nolint:mnd //no magic number

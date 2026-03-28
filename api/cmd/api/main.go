@@ -10,13 +10,14 @@ import (
 	"time"
 	_ "time/tzdata"
 
+	"github.com/getsentry/sentry-go"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/jackc/pgx/v5/stdlib"
 	"github.com/pressly/goose/v3"
-	"github.com/xdoubleu/essentia/v2/pkg/communication/httptools"
-	"github.com/xdoubleu/essentia/v2/pkg/database/postgres"
-	"github.com/xdoubleu/essentia/v2/pkg/logging"
-	"github.com/xdoubleu/essentia/v2/pkg/sentrytools"
+	"github.com/xdoubleu/essentia/v3/pkg/communication/httptools"
+	"github.com/xdoubleu/essentia/v3/pkg/database/postgres"
+	"github.com/xdoubleu/essentia/v3/pkg/logging"
+	"github.com/xdoubleu/essentia/v3/pkg/sentrytools"
 
 	"check-in/api/internal/config"
 	"check-in/api/internal/helpers"
@@ -122,8 +123,38 @@ func (app *Application) setDB(db postgres.DB) {
 
 func (app *Application) setContext() {
 	ctx, cancel := context.WithCancel(context.Background())
+
+	sentryHub := initSentryGetHub(app.config)
+	if sentryHub != nil {
+		ctx = sentry.SetHubOnContext(ctx, sentryHub)
+	}
+
 	app.ctx = ctx
 	app.ctxCancel = cancel
+}
+
+func initSentryGetHub(config config.Config) *sentry.Hub {
+	if len(config.SentryDsn) == 0 {
+		return nil
+	}
+
+	//nolint:exhaustruct //other fields are optional
+	sentryClientOptions := sentry.ClientOptions{
+		Dsn:              config.SentryDsn,
+		Environment:      config.Env,
+		Release:          config.Release,
+		EnableTracing:    true,
+		TracesSampleRate: config.SampleRate,
+		SampleRate:       config.SampleRate,
+	}
+
+	err := sentry.Init(sentryClientOptions)
+
+	if err != nil {
+		panic(err)
+	}
+
+	return sentry.CurrentHub().Clone()
 }
 
 func ApplyMigrations(logger *slog.Logger, db *pgxpool.Pool) {

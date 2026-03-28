@@ -1,6 +1,6 @@
 package dtos
 
-import "github.com/xdoubleu/essentia/v2/pkg/validate"
+import "github.com/xdoubleu/essentia/v3/pkg/validate"
 
 type SignInDto struct {
 	Username   string `json:"username"`
