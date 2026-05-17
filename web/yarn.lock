@@ -2194,32 +2194,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jscpd/badge-reporter@npm:4.0.4":
-  version: 4.0.4
-  resolution: "@jscpd/badge-reporter@npm:4.0.4"
+"@jscpd/badge-reporter@npm:4.2.3":
+  version: 4.2.3
+  resolution: "@jscpd/badge-reporter@npm:4.2.3"
   dependencies:
     badgen: "npm:^3.2.3"
     colors: "npm:^1.4.0"
     fs-extra: "npm:^11.2.0"
-  checksum: 10c0/f2b7c58687b0a80d55e0ed4321ab9b0954cea2018b1dc3db5741cbed21e905f054ab6d218aea19537f169a92af51ac753b282e61697f98210dcc74c52e6a8a1d
+  checksum: 10c0/d6f8f2f4204b15df03967c9e487c461f182da2f77c58ca12446f4e71dd005b0cff4e0e7d617f7b954494ef89a134cd31fdd82ecb87a26a5de81b018d94a5546c
   languageName: node
   linkType: hard
 
-"@jscpd/core@npm:4.0.4":
-  version: 4.0.4
-  resolution: "@jscpd/core@npm:4.0.4"
+"@jscpd/core@npm:4.2.3":
+  version: 4.2.3
+  resolution: "@jscpd/core@npm:4.2.3"
   dependencies:
     eventemitter3: "npm:^5.0.1"
-  checksum: 10c0/8e2cb4445fc74d759f5f32b24dce23e5a972e4b60b8b3b06eb3d07a24ab2a7494c0e43c123d11416a4b527153677083070a5987a24a738f75a0c6e72eccc4b09
+  checksum: 10c0/2db2414c992e2b265507d3878d23669c0020029292809bdc38d9a49c0c5230c3b75b7181e229c51d7515021b11d773346066f1bcdfdc1e724a7bda153e747c15
   languageName: node
   linkType: hard
 
-"@jscpd/finder@npm:4.0.4":
-  version: 4.0.4
-  resolution: "@jscpd/finder@npm:4.0.4"
+"@jscpd/finder@npm:4.2.3":
+  version: 4.2.3
+  resolution: "@jscpd/finder@npm:4.2.3"
   dependencies:
-    "@jscpd/core": "npm:4.0.4"
-    "@jscpd/tokenizer": "npm:4.0.4"
+    "@jscpd/core": "npm:4.2.3"
+    "@jscpd/tokenizer": "npm:4.2.3"
     blamer: "npm:^1.0.6"
     bytes: "npm:^3.1.2"
     cli-table3: "npm:^0.6.5"
@@ -2228,29 +2228,28 @@ __metadata:
     fs-extra: "npm:^11.2.0"
     markdown-table: "npm:^2.0.0"
     pug: "npm:^3.0.3"
-  checksum: 10c0/8f2de17d78e071814ab89a7934a2f43a007f1eefce9bc9c0d7e21b2c04456167921e25d90144a49c0ead399ce8d7f8ee3a15dd973622dd8e889310b5976dab4b
+  checksum: 10c0/cfa843ea135c3c58afcb122b12cb25219d93bbd69b49fbecefb4b7bdd9abea4989b1af465472715e8b6354fe668b6d7f7e1778a1632a6b4356259b469b92751f
   languageName: node
   linkType: hard
 
-"@jscpd/html-reporter@npm:4.0.4":
-  version: 4.0.4
-  resolution: "@jscpd/html-reporter@npm:4.0.4"
+"@jscpd/html-reporter@npm:4.2.3":
+  version: 4.2.3
+  resolution: "@jscpd/html-reporter@npm:4.2.3"
   dependencies:
     colors: "npm:1.4.0"
     fs-extra: "npm:^11.2.0"
     pug: "npm:^3.0.3"
-  checksum: 10c0/27c1e8a1c1258de38ceea2c7e484123b5f1210a9ce060e7ffcfff6f51c3189a6cddf1a95d4de22286f5a00093c264aba0ff9f109723afa836eef4ecdbe9a70ad
+  checksum: 10c0/95811396dd9d7aabbc43851df9460c88b09c1ce123d8a4c9cec2085bcf5bf631ceca7cc229f2483d7fad39f163d16233bb9be4231eb0bbc7ad3db17a04429c07
   languageName: node
   linkType: hard
 
-"@jscpd/tokenizer@npm:4.0.4":
-  version: 4.0.4
-  resolution: "@jscpd/tokenizer@npm:4.0.4"
+"@jscpd/tokenizer@npm:4.2.3":
+  version: 4.2.3
+  resolution: "@jscpd/tokenizer@npm:4.2.3"
   dependencies:
-    "@jscpd/core": "npm:4.0.4"
-    reprism: "npm:^0.0.11"
+    "@jscpd/core": "npm:4.2.3"
     spark-md5: "npm:^3.0.2"
-  checksum: 10c0/0f7ef5ef31b2b7e9b825bfa71be09643389dc108522fce3ea1342a1fe47aff73f7d2297a320b16ac916dfebe4433c8879a6cf7675d995c3892fc2c8a9f8c5c3d
+  checksum: 10c0/fb972b1df6935322a68176e6a07a5bf00481d4eac9df34938c5a7820c57a16a86c803c1c7fc02fe5cd9e56c7b8e0b44edb17939f50f047e311f358afc2be8d64
   languageName: node
   linkType: hard
 
@@ -8281,13 +8280,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gitignore-to-glob@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "gitignore-to-glob@npm:0.3.0"
-  checksum: 10c0/3c1baa2b7ca61ebd3d4784ef13a71ca2b98ee478ccafe234d6947b6f1b75343492304a7972fe15885b5c5e8f8d2c006cb6ca431dd7e9f270885766288f038f6a
-  languageName: node
-  linkType: hard
-
 "glob-parent@npm:^5.1.2, glob-parent@npm:~5.1.2":
   version: 5.1.2
   resolution: "glob-parent@npm:5.1.2"
@@ -10132,34 +10124,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jscpd-sarif-reporter@npm:4.0.6":
-  version: 4.0.6
-  resolution: "jscpd-sarif-reporter@npm:4.0.6"
+"jscpd-sarif-reporter@npm:4.2.3":
+  version: 4.2.3
+  resolution: "jscpd-sarif-reporter@npm:4.2.3"
   dependencies:
     colors: "npm:^1.4.0"
     fs-extra: "npm:^11.2.0"
     node-sarif-builder: "npm:^3.4.0"
-  checksum: 10c0/b67a1f188998d7fb63a87e34a5b76279a7e5a1c60c7979e76d58e5039f3977e3ce82b3ccb572d805fb0536ebab71cd641ef8f1bb44bde33b06cc73b772f67825
+  checksum: 10c0/9ef9f19f85b46870c509399557139daf276e5e85a9deda132fd743b1bd18dc4305fa0e6bf8a0546bbb7102d18990fd79216dd17629428bf62a24cd235c2e6f32
   languageName: node
   linkType: hard
 
-"jscpd@npm:4.0.8":
-  version: 4.0.8
-  resolution: "jscpd@npm:4.0.8"
+"jscpd@npm:4.2.3":
+  version: 4.2.3
+  resolution: "jscpd@npm:4.2.3"
   dependencies:
-    "@jscpd/badge-reporter": "npm:4.0.4"
-    "@jscpd/core": "npm:4.0.4"
-    "@jscpd/finder": "npm:4.0.4"
-    "@jscpd/html-reporter": "npm:4.0.4"
-    "@jscpd/tokenizer": "npm:4.0.4"
+    "@jscpd/badge-reporter": "npm:4.2.3"
+    "@jscpd/core": "npm:4.2.3"
+    "@jscpd/finder": "npm:4.2.3"
+    "@jscpd/html-reporter": "npm:4.2.3"
+    "@jscpd/tokenizer": "npm:4.2.3"
     colors: "npm:^1.4.0"
     commander: "npm:^5.0.0"
     fs-extra: "npm:^11.2.0"
-    gitignore-to-glob: "npm:^0.3.0"
-    jscpd-sarif-reporter: "npm:4.0.6"
+    jscpd-sarif-reporter: "npm:4.2.3"
   bin:
     jscpd: bin/jscpd
-  checksum: 10c0/c1caa346cb6f6b8ad9dafcfeb69b3331fc9bdfdf700093f536f1792802bd2a8fcc8212eba5466c4c4efb7b5e41847a18b54649860d9ce1d487ac864146c76487
+  checksum: 10c0/cf7235c2e8ea97b864864f74f8ef69575b68f001edb7a54e2436961810e5f8f504c0ef5ffa943e7495e2ace99cfb6cf3d552902d250205b330b83844a3c951cd
   languageName: node
   linkType: hard
 
@@ -13186,13 +13177,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reprism@npm:^0.0.11":
-  version: 0.0.11
-  resolution: "reprism@npm:0.0.11"
-  checksum: 10c0/d2221217566132f92a25254047ebba14fe82b159ca30fd460b262497d3a6bc8103900835bc9220931c4ce892cc08d073f63c168f908414f4a971c7bc7f27cb99
-  languageName: node
-  linkType: hard
-
 "require-directory@npm:^2.1.1":
   version: 2.1.1
   resolution: "require-directory@npm:2.1.1"
@@ -15420,7 +15404,7 @@ __metadata:
     jest-mock: "npm:30.2.0"
     jest-preview: "npm:0.3.3"
     jest-websocket-mock: "npm:2.5.0"
-    jscpd: "npm:4.0.8"
+    jscpd: "npm:4.2.3"
     knip: "npm:5.79.0"
     moment: "npm:2.30.1"
     moment-timezone: "npm:0.6.0"
