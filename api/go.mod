@@ -11,6 +11,7 @@ require (
 	github.com/pressly/goose/v3 v3.26.0
 	github.com/stretchr/testify v1.11.1
 	github.com/xdoubleu/essentia/v3 v3.0.0
+	github.com/xdoubleu/essentia/v4 v4.0.2
 	github.com/xhit/go-str2duration/v2 v2.1.0
 )
 
