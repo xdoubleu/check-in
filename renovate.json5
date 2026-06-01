@@ -45,4 +45,8 @@
   schedule: [
     'monthly',
   ],
+  automerge: true,
+  automergeType: 'pr',
+  automergeSchedule: ['after 10pm and before 6am'],
+  platformAutomerge: true,
 }
