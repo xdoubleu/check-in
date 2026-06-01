@@ -1,16 +1,16 @@
 name: API Lint Workflow
 
+permissions:
+  contents: read
+
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   workflow_call:
 
-permissions:
-  contents: read
-
 jobs:
-  lint:
-    name: API Lint
+  lint-go:
+    name: API Go Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -18,10 +18,26 @@ jobs:
         with:
           go-version-file: './api/go.mod'
           cache-dependency-path: './api/go.sum'
-      - name: golangci-lint
+      - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v9
         with:
-          version: 'latest'
-          working-directory: './api'
-      - run: make lint/sql
+          version: v2.8.0
+          working-directory: ./api
+
+  lint-sql:
+    name: API SQL Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+      - uses: actions/cache@v5
+        with:
+          path: ~/.cache/pip
+          key: sqlfluff-3.3.0
+      - name: Install sqlfluff
+        run: pip install sqlfluff==3.3.0
+      - name: Run sqlfluff
+        run: sqlfluff lint --dialect postgres ./cmd/api/migrations --exclude-rules RF04
         working-directory: './api'
