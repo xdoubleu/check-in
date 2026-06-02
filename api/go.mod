@@ -6,7 +6,7 @@ require github.com/justinas/alice v1.2.0
 
 require (
 	github.com/dlclark/regexp2 v1.12.0
-	github.com/getsentry/sentry-go v0.42.0
+	github.com/getsentry/sentry-go v0.46.2
 	github.com/google/uuid v1.6.0
 	github.com/pressly/goose/v3 v3.27.1
 	github.com/stretchr/testify v1.11.1
