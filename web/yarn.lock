@@ -6507,9 +6507,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cpx2@npm:8.0.2":
-  version: 8.0.2
-  resolution: "cpx2@npm:8.0.2"
+"cpx2@npm:9.0.0":
+  version: 9.0.0
+  resolution: "cpx2@npm:9.0.0"
   dependencies:
     debounce: "npm:^3.0.0"
     glob: "npm:^13.0.0"
@@ -6517,12 +6517,11 @@ __metadata:
     ignore: "npm:^7.0.5"
     minimatch: "npm:^10.0.1"
     p-map: "npm:^7.0.0"
-    resolve: "npm:^1.12.0"
     shell-quote: "npm:^1.8.0"
     subarg: "npm:^1.0.0"
   bin:
     cpx: bin/index.js
-  checksum: 10c0/71ef53e007a2a302cf4f6830cfdae93e2afde34f70b469a2fd47b40cfa06fb016cf7e79a49a27e1bec5ca378e0b19348e4497b3aba119ad942c36f4377a1f84a
+  checksum: 10c0/eae020147adbf5b8c52fc940be44d10bdb7d922d16bb85ab2163786a7349ee34efcca5513df577f08556ca0e3fa53840d974df1d50f4567d08dc67f1590ca7f8
   languageName: node
   linkType: hard
 
@@ -13430,7 +13429,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.1.7, resolve@npm:^1.10.0, resolve@npm:^1.12.0, resolve@npm:^1.15.1, resolve@npm:^1.19.0, resolve@npm:^1.22.10, resolve@npm:^1.22.4":
+"resolve@npm:^1.1.7, resolve@npm:^1.10.0, resolve@npm:^1.15.1, resolve@npm:^1.19.0, resolve@npm:^1.22.10, resolve@npm:^1.22.4":
   version: 1.22.11
   resolution: "resolve@npm:1.22.11"
   dependencies:
@@ -13456,7 +13455,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^1.1.7#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.12.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.15.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.19.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.10#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.4#optional!builtin<compat/resolve>":
+"resolve@patch:resolve@npm%3A^1.1.7#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.15.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.19.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.10#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.4#optional!builtin<compat/resolve>":
   version: 1.22.11
   resolution: "resolve@patch:resolve@npm%3A1.22.11#optional!builtin<compat/resolve>::version=1.22.11&hash=c3c19d"
   dependencies:
@@ -15587,7 +15586,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:8.51.0"
     bootstrap: "npm:5.3.8"
     bootstrap-icons: "npm:1.13.1"
-    cpx2: "npm:8.0.2"
+    cpx2: "npm:9.0.0"
     cross-env: "npm:10.1.0"
     eslint: "npm:9.39.2"
     eslint-config-next: "npm:16.2.7"
