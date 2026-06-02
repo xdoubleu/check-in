@@ -62,7 +62,7 @@
     "eslint-plugin-jest-dom": "5.5.0",
     "eslint-plugin-redundant-undefined": "1.0.0",
     "eslint-plugin-sonarjs": "3.0.7",
-    "eslint-plugin-testing-library": "7.15.4",
+    "eslint-plugin-testing-library": "7.16.2",
     "jest": "30.4.2",
     "jest-environment-jsdom": "30.4.1",
     "jest-mock": "30.4.1",
