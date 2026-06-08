@@ -68,7 +68,7 @@ export default function ListViewLayout<
       ? parseInt(router.query.page as string)
       : undefined
 
-    const args = apiCallArgs ?? ([] as unknown as W)
+    const args = (apiCallArgs ?? []) as W
     args.push(page)
 
     const response = await apiCall(...args)
@@ -89,7 +89,7 @@ export default function ListViewLayout<
     if (preprocessList) {
       setList(await preprocessList(data))
     } else {
-      setList(data as unknown as U)
+      setList(data as U)
     }
   }, [apiCall, apiCallArgs, preprocessList, setList, router])
 
@@ -105,7 +105,7 @@ export default function ListViewLayout<
       <br />
 
       <div className="min-vh-51">
-        {!list.data && <Loader message="Fetching data." />}
+        {!list.data ? <Loader message="Fetching data." /> : null}
 
         {list.data?.length == 0 ? "Nothing to see here." : ""}
 

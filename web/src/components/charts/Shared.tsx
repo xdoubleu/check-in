@@ -119,7 +119,9 @@ export function SharedComposedChart({
     <ResponsiveContainer {...RESPONSIVE_CONTAINER_PROPS}>
       <ComposedChart data={data} {...CHART_PROPS}>
         <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip labelFormatter={xAxisTickFomatter} />
+        <Tooltip
+          labelFormatter={(label) => xAxisTickFomatter(label as string)}
+        />
         <Legend />
         <YAxis />
         <XAxis dataKey="datetime" tickFormatter={xAxisTickFomatter} />

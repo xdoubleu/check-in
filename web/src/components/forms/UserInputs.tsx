@@ -1,8 +1,7 @@
 import {
   type FieldError,
   type FieldErrors,
-  type UseFormRegister,
-  type UseFormWatch
+  type UseFormRegister
 } from "react-hook-form"
 import FormInput from "./FormInput"
 
@@ -15,14 +14,12 @@ interface Inputs {
 interface UserInputsProps<T extends Inputs> {
   required: boolean
   register: UseFormRegister<T>
-  watch: UseFormWatch<T>
   errors: FieldErrors<T>
 }
 
 export default function UserInputs<T extends Inputs>({
   required,
   register,
-  watch,
   errors
 }: Readonly<UserInputsProps<T>>) {
   return (
@@ -50,12 +47,10 @@ export default function UserInputs<T extends Inputs>({
         placeholder="Repeat password"
         autocomplete="new-password"
         register={register("repeatPassword" as never, {
-          validate: (val: string | undefined) => {
-            if ((watch("password" as never) as unknown as string) !== val) {
-              return "Your passwords do no match"
-            }
-            return undefined
-          }
+          validate: (val: string | undefined, formValues: T) =>
+            formValues.password !== val
+              ? "Your passwords do no match"
+              : undefined
         })}
         errors={errors.repeatPassword as FieldError}
       />

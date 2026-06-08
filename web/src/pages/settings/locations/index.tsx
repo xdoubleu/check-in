@@ -26,7 +26,6 @@ function CreateLocationModal({
 }: Readonly<CreateLocationModalProps>) {
   const {
     register,
-    watch,
     formState: { errors }
   } = form
 
@@ -55,12 +54,7 @@ function CreateLocationModal({
         errors={errors.capacity}
       />
       <TimeZoneInput register={register("timeZone")} />
-      <UserInputs
-        required={true}
-        register={register}
-        watch={watch}
-        errors={errors}
-      />
+      <UserInputs required={true} register={register} errors={errors} />
       {/* jscpd:ignore-end */}
     </CreateModal>
   )

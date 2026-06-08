@@ -60,6 +60,8 @@ export default function LocationDetail() {
     void fetchCheckInData()
   }, [fetchCheckInData, fetchData])
 
+  const isReadonly = user?.role !== "admin" && user?.role !== "manager"
+
   return (
     <AuthRedirecter>
       {!location ? (
@@ -76,7 +78,7 @@ export default function LocationDetail() {
           <h2>Todays Check-Ins</h2>
           <br />
 
-          {!checkInsList && <Loader message="Fetching data." />}
+          {!checkInsList ? <Loader message="Fetching data." /> : null}
 
           {checkInsList?.length == 0 ? "Nothing to see here." : ""}
 
@@ -85,7 +87,7 @@ export default function LocationDetail() {
               <div key={item.id}>
                 <CheckInCard
                   data={item}
-                  readonly={user?.role !== "admin" && user?.role !== "manager"}
+                  readonly={isReadonly}
                   fetchData={fetchCheckInData}
                 />
               </div>
