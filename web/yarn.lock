@@ -15860,12 +15860,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:13.0.1":
-  version: 13.0.1
-  resolution: "uuid@npm:13.0.1"
+"uuid@npm:14.0.0":
+  version: 14.0.0
+  resolution: "uuid@npm:14.0.0"
   bin:
     uuid: dist-node/bin/uuid
-  checksum: 10c0/7bb8ad18b11871b7bd1b9161a60610c2b6ce8f7300d93932f92117a2ab9b40479dd23e81929ac848e8a7c45f78b8ed3333f88694b71c17ff3265e443f8684642
+  checksum: 10c0/a57ae7794c45005c1a9208989196c5baf79a7679c30f43c1bee9033a2c4d113a2cea216fa6fcc9663b08b0d55635df1a7c6eb7e7f3d21c3e50688c698fa39a50
   languageName: node
   linkType: hard
 
@@ -16056,7 +16056,7 @@ __metadata:
     typescript: "npm:5.9.3"
     typescript-eslint: "npm:8.60.1"
     uglify-js: "npm:3.19.3"
-    uuid: "npm:13.0.1"
+    uuid: "npm:14.0.0"
   languageName: unknown
   linkType: soft
 

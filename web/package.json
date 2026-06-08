@@ -39,7 +39,7 @@
     "serve": "14.2.6",
     "typescript": "5.9.3",
     "uglify-js": "3.19.3",
-    "uuid": "13.0.1"
+    "uuid": "14.0.0"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
