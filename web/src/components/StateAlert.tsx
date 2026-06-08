@@ -5,7 +5,6 @@ interface StateAlertProps {
   state: State | undefined
 }
 
-// eslint-disable-next-line sonarjs/function-return-type
 export default function StateAlert({ state }: Readonly<StateAlertProps>) {
   return (
     (state && state.isMaintenance && (
