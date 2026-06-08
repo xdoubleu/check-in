@@ -272,8 +272,6 @@ func TestGetCheckInsLocationRangeCSV(t *testing.T) {
 		// yesterday
 		fetchedTimeYesterday, _ := time.Parse(constants.DateFormat, rsData[1][0])
 		assert.Equal(t, startDate, fetchedTimeYesterday.Format(constants.DateFormat))
-		assert.Equal(t, "0", rsData[1][1])
-		assert.Equal(t, "0", rsData[1][2])
 
 		// today
 		fetchedTimeToday, _ := time.Parse(constants.DateFormat, rsData[2][0])
@@ -282,19 +280,32 @@ func TestGetCheckInsLocationRangeCSV(t *testing.T) {
 			testApp.getTimeNowUTC().Format(constants.DateFormat),
 			fetchedTimeToday.Format(constants.DateFormat),
 		)
-		assert.Equal(
-			t,
-			strconv.Itoa(int(testEnv.fixtures.DefaultLocation.Capacity)),
-			rsData[2][1],
-		)
-		assert.Equal(t, strconv.Itoa(amount1), rsData[2][2])
-		assert.Equal(t, strconv.Itoa(amount2), rsData[2][3])
 
 		// tomorrow
 		fetchedTimeTomorrow, _ := time.Parse(constants.DateFormat, rsData[3][0])
 		assert.Equal(t, endDate, fetchedTimeTomorrow.Format(constants.DateFormat))
-		assert.Equal(t, "0", rsData[3][1])
-		assert.Equal(t, "0", rsData[3][2])
+
+		// Check-ins are bucketed by the location's local date, which may differ
+		// from the UTC date when the test runs near a day boundary. Assert the
+		// counts against whichever row matches "now" in the location's timezone.
+		loc, _ := time.LoadLocation(testEnv.fixtures.DefaultLocation.TimeZone)
+		formattedNow := testApp.getTimeNowUTC().In(loc).Format(constants.DateFormat)
+		for _, row := range rsData[1:] {
+			expectedCapacity := "0"
+			expectedAmount1, expectedAmount2 := "0", "0"
+
+			if row[0] == formattedNow {
+				expectedCapacity = strconv.Itoa(
+					int(testEnv.fixtures.DefaultLocation.Capacity),
+				)
+				expectedAmount1 = strconv.Itoa(amount1)
+				expectedAmount2 = strconv.Itoa(amount2)
+			}
+
+			assert.Equal(t, expectedCapacity, row[1])
+			assert.Equal(t, expectedAmount1, row[2])
+			assert.Equal(t, expectedAmount2, row[3])
+		}
 	}
 }
 

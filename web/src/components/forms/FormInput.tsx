@@ -13,7 +13,6 @@ interface FormInputProps<T extends string> {
   max?: string | number
   min?: string | number
   autocomplete?: string
-  // eslint-disable-next-line redundant-undefined/redundant-undefined
   errors?: FieldError | undefined
 }
 
