@@ -92,7 +92,7 @@ export default function ManualHome() {
 
   useEffect(() => {
     let detectedLanguage = window.navigator.language
-    if (!supportedLanguages.includes(detectedLanguage)) {
+    if (!supportedLanguages.some((lang) => lang === detectedLanguage)) {
       detectedLanguage = "en"
     }
 

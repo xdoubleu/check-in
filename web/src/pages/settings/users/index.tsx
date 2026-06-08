@@ -20,7 +20,6 @@ export type CreateUserModalProps = ICreateModalProps<CreateUserForm>
 function CreateUserModal({ form, fetchData }: Readonly<CreateUserModalProps>) {
   const {
     register,
-    watch,
     formState: { errors }
   } = form
 
@@ -31,12 +30,7 @@ function CreateUserModal({ form, fetchData }: Readonly<CreateUserModalProps>) {
       fetchData={fetchData}
       typeName="user"
     >
-      <UserInputs
-        required={true}
-        register={register}
-        watch={watch}
-        errors={errors}
-      />
+      <UserInputs required={true} register={register} errors={errors} />
     </CreateModal>
   )
 }

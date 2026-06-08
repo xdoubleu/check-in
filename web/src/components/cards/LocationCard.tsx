@@ -36,7 +36,6 @@ export function LocationUpdateModal({
 
   const {
     register,
-    watch,
     formState: { errors }
   } = form
 
@@ -67,12 +66,7 @@ export function LocationUpdateModal({
         errors={errors.capacity}
       />
       <TimeZoneInput register={register("timeZone")} />
-      <UserInputs
-        required={false}
-        register={register}
-        watch={watch}
-        errors={errors}
-      />
+      <UserInputs required={false} register={register} errors={errors} />
       {/* jscpd:ignore-end */}
     </UpdateModal>
   )

@@ -68,6 +68,11 @@ eslintConfigPrettier,
         "no-duplicate-imports": "error",
         "no-warning-comments": "error",
 
+        "no-restricted-syntax": ["error", {
+            selector: "TSAsExpression > TSUnknownKeyword",
+            message: "Casting to 'unknown' is not allowed.",
+        }],
+
         "@typescript-eslint/no-unused-vars": ["error", {
             ignoreRestSiblings: true,
         }],

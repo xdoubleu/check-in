@@ -1,16 +1,18 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "baseUrl": "./src",
     "paths": {
+      "*": [
+        "./src/*"
+      ],
       "test-utils": [
-        "../utils/test-utils"
+        "./utils/test-utils"
       ],
       "mocks": [
-        "../utils/mocks"
+        "./utils/mocks"
       ]
     },
-    "target": "es5",
+    "target": "es2017",
     "lib": [
       "dom",
       "dom.iterable",

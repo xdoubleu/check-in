@@ -122,7 +122,9 @@ describe("LocationListView (page)", () => {
 
     const createButtons = screen.getAllByRole("button", { name: "Create" })
 
-    const createButtonIndex = createButtons.indexOf(createButton)
+    const createButtonIndex = createButtons.findIndex(
+      (button) => button === createButton
+    )
     createButtons.splice(createButtonIndex, 1)
 
     const confirmCreateButton = createButtons[0]
@@ -177,7 +179,9 @@ describe("LocationListView (page)", () => {
 
     const updateButtons = screen.getAllByRole("button", { name: "Update" })
 
-    const updateButtonIndex = updateButtons.indexOf(updateButton)
+    const updateButtonIndex = updateButtons.findIndex(
+      (button) => button === updateButton
+    )
     updateButtons.splice(updateButtonIndex, 1)
 
     const confirmUpdateButton = updateButtons[0]
@@ -223,7 +227,9 @@ describe("LocationListView (page)", () => {
 
     const deleteButtons = screen.getAllByRole("button", { name: "Delete" })
 
-    const deleteButtonIndex = deleteButtons.indexOf(deleteButton)
+    const deleteButtonIndex = deleteButtons.findIndex(
+      (button) => button === deleteButton
+    )
     deleteButtons.splice(deleteButtonIndex, 1)
 
     const confirmDeleteButton = deleteButtons[0]

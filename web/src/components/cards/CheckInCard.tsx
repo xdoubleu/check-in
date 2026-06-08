@@ -42,11 +42,11 @@ export default function CheckInCard({
                 School: {data.schoolName}
               </Card.Subtitle>
             </div>
-            {!readonly && (
+            {!readonly ? (
               <div className="ms-auto">
                 <CheckInDeleteModal data={data} fetchData={fetchData} />
               </div>
-            )}
+            ) : null}
           </div>
         </Card.Body>
       </Card>

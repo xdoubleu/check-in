@@ -70,12 +70,12 @@ export default function SchoolCard({
             <div>
               <Card.Title>{data.name}</Card.Title>
             </div>
-            {!data.readOnly && (
+            {!data.readOnly ? (
               <div className="ms-auto">
                 <SchoolUpdateModal data={data} fetchData={fetchData} />
                 <SchoolDeleteModal data={data} fetchData={fetchData} />
               </div>
-            )}
+            ) : null}
           </div>
         </Card.Body>
       </Card>

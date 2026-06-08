@@ -20,7 +20,6 @@ function UserUpdateModal({ data, fetchData }: Readonly<UserCardProps>) {
 
   const {
     register,
-    watch,
     formState: { errors }
   } = form
 
@@ -35,12 +34,7 @@ function UserUpdateModal({ data, fetchData }: Readonly<UserCardProps>) {
       fetchData={fetchData}
       typeName="user"
     >
-      <UserInputs
-        required={false}
-        register={register}
-        watch={watch}
-        errors={errors}
-      />
+      <UserInputs required={false} register={register} errors={errors} />
     </UpdateModal>
   )
 }

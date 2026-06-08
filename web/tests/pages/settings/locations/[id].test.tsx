@@ -123,7 +123,9 @@ describe("LocationDetail (page)", () => {
 
     const deleteButtons = screen.getAllByRole("button", { name: "Delete" })
 
-    const deleteButtonIndex = deleteButtons.indexOf(deleteButton)
+    const deleteButtonIndex = deleteButtons.findIndex(
+      (button) => button === deleteButton
+    )
     deleteButtons.splice(deleteButtonIndex, 1)
 
     const confirmDeleteButton = deleteButtons[0]
