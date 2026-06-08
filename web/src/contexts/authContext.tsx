@@ -127,7 +127,6 @@ function redirect(
 export const AuthRedirecter = ({
   children,
   redirects
-  // eslint-disable-next-line sonarjs/function-return-type
 }: AuthRedirecterProps) => {
   const { user, loadingUser } = useContext(AuthContext)
   const [loading, setLoading] = useState(true)

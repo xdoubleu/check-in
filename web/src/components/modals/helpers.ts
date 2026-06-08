@@ -12,7 +12,7 @@ export function setErrors<T, U extends FieldValues>(
   } else {
     for (const field in response.message as object) {
       setError(field as never, {
-        message: (response.message as never)[field] as string
+        message: (response.message as never)[field]
       })
     }
   }

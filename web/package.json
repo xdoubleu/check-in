@@ -39,10 +39,10 @@
     "serve": "14.2.6",
     "typescript": "5.9.3",
     "uglify-js": "3.19.3",
-    "uuid": "13.0.1"
+    "uuid": "14.0.0"
   },
   "devDependencies": {
-    "@eslint/js": "9.39.4",
+    "@eslint/js": "10.0.1",
     "@next/bundle-analyzer": "16.2.7",
     "@testing-library/dom": "10.4.1",
     "@testing-library/jest-dom": "6.9.1",
@@ -53,14 +53,13 @@
     "@types/react": "19.2.16",
     "@types/react-dom": "19.2.3",
     "@types/uglify-js": "3",
-    "@typescript-eslint/parser": "8.51.0",
+    "@typescript-eslint/parser": "8.60.1",
     "cross-env": "10.1.0",
-    "eslint": "9.39.4",
+    "eslint": "10.4.1",
     "eslint-config-next": "16.2.7",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-jest-dom": "5.5.0",
-    "eslint-plugin-redundant-undefined": "1.0.0",
     "eslint-plugin-sonarjs": "4.0.3",
     "eslint-plugin-testing-library": "7.16.2",
     "jest": "30.4.2",
@@ -74,7 +73,7 @@
     "openapi-typescript": "7.13",
     "prettier": "3.8.3",
     "ts-jest": "29.4.11",
-    "typescript-eslint": "8.51.0"
+    "typescript-eslint": "8.60.1"
   },
   "engines": {
     "node": "24.x",

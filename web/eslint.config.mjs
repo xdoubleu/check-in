@@ -1,5 +1,4 @@
 import sonarjs from "eslint-plugin-sonarjs";
-import redundantUndefined from "eslint-plugin-redundant-undefined";
 import jestDom from "eslint-plugin-jest-dom";
 import testingLibrary from "eslint-plugin-testing-library";
 import tsParser from "@typescript-eslint/parser";
@@ -37,10 +36,6 @@ jestDom.configs["flat/recommended"],
 testingLibrary.configs["flat/react"],
 eslintConfigPrettier,
 {
-    plugins: {
-        "redundant-undefined": redundantUndefined,
-    },
-
     languageOptions: {
         parser: tsParser,
         ecmaVersion: 5,
@@ -72,7 +67,6 @@ eslintConfigPrettier,
         "max-lines-per-function": "error",
         "no-duplicate-imports": "error",
         "no-warning-comments": "error",
-        "redundant-undefined/redundant-undefined": "error",
 
         "@typescript-eslint/no-unused-vars": ["error", {
             ignoreRestSiblings: true,
