@@ -66,7 +66,7 @@
     "jest-environment-jsdom": "30.4.1",
     "jest-mock": "30.4.1",
     "jest-websocket-mock": "2.5.0",
-    "jscpd": "4.2.4",
+    "jscpd": "4.2.5",
     "knip": "6.15.0",
     "next-router-mock": "1.0.5",
     "npm-package-json-lint": "10.4.0",
