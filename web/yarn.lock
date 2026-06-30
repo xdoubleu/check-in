@@ -4321,16 +4321,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:19.2.16":
-  version: 19.2.16
-  resolution: "@types/react@npm:19.2.16"
-  dependencies:
-    csstype: "npm:^3.2.2"
-  checksum: 10c0/96f2850b67c5aa4a695bc32eb06c7609acdda1c0c597ace21ad24a5b9e2ccbccd97c0643253579fd629789a422a3694b4bbcb26e5fc6aec5f0357820bf0ee81c
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:>=16.9.11":
+"@types/react@npm:19.2.17, @types/react@npm:>=16.9.11":
   version: 19.2.17
   resolution: "@types/react@npm:19.2.17"
   dependencies:
@@ -14870,7 +14861,7 @@ __metadata:
     "@testing-library/user-event": "npm:14.6.1"
     "@types/jest": "npm:30.0.0"
     "@types/node": "npm:24.12.4"
-    "@types/react": "npm:19.2.16"
+    "@types/react": "npm:19.2.17"
     "@types/react-dom": "npm:19.2.3"
     "@types/uglify-js": "npm:3"
     "@typescript-eslint/parser": "npm:8.60.1"
