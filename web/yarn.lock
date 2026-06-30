@@ -2196,32 +2196,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jscpd/badge-reporter@npm:4.2.4":
-  version: 4.2.4
-  resolution: "@jscpd/badge-reporter@npm:4.2.4"
+"@jscpd/badge-reporter@npm:4.2.5":
+  version: 4.2.5
+  resolution: "@jscpd/badge-reporter@npm:4.2.5"
   dependencies:
     badgen: "npm:^3.2.3"
     colors: "npm:^1.4.0"
     fs-extra: "npm:^11.2.0"
-  checksum: 10c0/17255993400f58334b7f8196330172a963f65cc6050cce4e2f2a533371c3c859339d73dec5770e2cbec15f3f8fe68a318e8cb2ce823a88ee1ba59a79bce20c33
+  checksum: 10c0/004153e3b1e65d13b9a0638d581b15176bd889deebd07d0b5088cc40384fa8eead6bb822a4a16e28c626887e3c79ba8f39f36f799bc1542ccbfbff4c331bd9a7
   languageName: node
   linkType: hard
 
-"@jscpd/core@npm:4.2.4":
-  version: 4.2.4
-  resolution: "@jscpd/core@npm:4.2.4"
+"@jscpd/core@npm:4.2.5":
+  version: 4.2.5
+  resolution: "@jscpd/core@npm:4.2.5"
   dependencies:
     eventemitter3: "npm:^5.0.1"
-  checksum: 10c0/6a3979fdeeafd6b46cda255799462ef9c6d1a4c7ed7cf6995f5a9d274e6be5e01bd49cafeb64fbb72e14aff193cfade7ce419d8b615398f4a815e6eef66562e7
+  checksum: 10c0/d7a9fc8d3cadf47d428075876d183a19da227ebd48504baf56cdbe623cbd2a7fadcbb52fb5ee3914387f2674bd8423da0913288af81174dfc692ac361db91ac0
   languageName: node
   linkType: hard
 
-"@jscpd/finder@npm:4.2.4":
-  version: 4.2.4
-  resolution: "@jscpd/finder@npm:4.2.4"
+"@jscpd/finder@npm:4.2.5":
+  version: 4.2.5
+  resolution: "@jscpd/finder@npm:4.2.5"
   dependencies:
-    "@jscpd/core": "npm:4.2.4"
-    "@jscpd/tokenizer": "npm:4.2.4"
+    "@jscpd/core": "npm:4.2.5"
+    "@jscpd/tokenizer": "npm:4.2.5"
     blamer: "npm:^1.0.6"
     bytes: "npm:^3.1.2"
     cli-table3: "npm:^0.6.5"
@@ -2229,29 +2229,29 @@ __metadata:
     fast-glob: "npm:^3.3.2"
     fs-extra: "npm:^11.2.0"
     markdown-table: "npm:^2.0.0"
-    pug: "npm:^3.0.3"
-  checksum: 10c0/d456defabd8cedea6a00e2623a30c00307f3424a214442466be74134776dec7a77217e0b77cc4e258ec4b7af5eba4d371939248fe1ced7c7597999266128edb9
+    pug: "npm:^3.0.4"
+  checksum: 10c0/30900c58cc1cc16f3e65ebbf9dd222adc797c2e592b432b0b7d2bc83164d4bd3ad35bae7b7bee26e1becff2c4d772d9caad3b89e3444ad20eafda09635cd59cf
   languageName: node
   linkType: hard
 
-"@jscpd/html-reporter@npm:4.2.4":
-  version: 4.2.4
-  resolution: "@jscpd/html-reporter@npm:4.2.4"
+"@jscpd/html-reporter@npm:4.2.5":
+  version: 4.2.5
+  resolution: "@jscpd/html-reporter@npm:4.2.5"
   dependencies:
     colors: "npm:1.4.0"
     fs-extra: "npm:^11.2.0"
-    pug: "npm:^3.0.3"
-  checksum: 10c0/581de01dcb7dd0fa32ffb962000bb7339fb8479501bdd5ffe31ac3b6e552bcd8e0291c42a4f8fc60996f7a86b0bbc33b0ad0839d05652eac1086ff57bd7eb316
+    pug: "npm:^3.0.4"
+  checksum: 10c0/b8489ce8558b4b7a7a633ab0df30f188aed6c55c11d3a55131a2ecd283fd2ea5f0e9d2d841cc73724ef3b760d4a6c11c8a177f130cfbd5f69c79b4813ae73162
   languageName: node
   linkType: hard
 
-"@jscpd/tokenizer@npm:4.2.4":
-  version: 4.2.4
-  resolution: "@jscpd/tokenizer@npm:4.2.4"
+"@jscpd/tokenizer@npm:4.2.5":
+  version: 4.2.5
+  resolution: "@jscpd/tokenizer@npm:4.2.5"
   dependencies:
-    "@jscpd/core": "npm:4.2.4"
+    "@jscpd/core": "npm:4.2.5"
     spark-md5: "npm:^3.0.2"
-  checksum: 10c0/9103539d57f3f30110a97a373d283c5aed83b6577f3fe7f814c73b71c188c8d985ec2221cb43868822a8f08ac1599ca8a2db411d517c0f2378ea7709c21919dc
+  checksum: 10c0/85407a793543370832b06d8c3e4890f74e2fc1431ae4edff170e6c81a7748c6c7c5fb41bdb833aa3d205dcbe1bcf67e473966ee7f1c57c6c6f5239a8fc6c6844
   languageName: node
   linkType: hard
 
@@ -5950,17 +5950,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:^15.0.0":
+  version: 15.0.0
+  resolution: "commander@npm:15.0.0"
+  checksum: 10c0/539229c171914ea1ccd45ee5f10d924289a12a684ea3a7a44147abe54003c35ed6de9ae4ad198d88c29fdf403dca0428451a388234e6dc01b6faa978fb207206
+  languageName: node
+  linkType: hard
+
 "commander@npm:^2.20.0":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
   checksum: 10c0/74c781a5248c2402a0a3e966a0a2bba3c054aad144f5c023364be83265e796b20565aa9feff624132ff629aa64e16999fa40a743c10c12f7c61e96a794b99288
-  languageName: node
-  linkType: hard
-
-"commander@npm:^5.0.0":
-  version: 5.1.0
-  resolution: "commander@npm:5.1.0"
-  checksum: 10c0/da9d71dbe4ce039faf1fe9eac3771dca8c11d66963341f62602f7b66e36d2a3f8883407af4f9a37b1db1a55c59c0c1325f186425764c2e963dc1d67aec2a4b6d
   languageName: node
   linkType: hard
 
@@ -9693,33 +9693,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jscpd-sarif-reporter@npm:4.2.4":
-  version: 4.2.4
-  resolution: "jscpd-sarif-reporter@npm:4.2.4"
+"jscpd-sarif-reporter@npm:4.2.5":
+  version: 4.2.5
+  resolution: "jscpd-sarif-reporter@npm:4.2.5"
   dependencies:
     colors: "npm:^1.4.0"
     fs-extra: "npm:^11.2.0"
-    node-sarif-builder: "npm:^3.4.0"
-  checksum: 10c0/a4e5b1611f6a1546559742a5728beae56c6e974e756d13218a66f3e9fa1babef9dc96954e6d4289b336c01054c965126cf466e737f06345be32facdd3f74a4ef
+    node-sarif-builder: "npm:^4.1.0"
+  checksum: 10c0/be100fddf1767b58526b5ec863b595848af9129557ed59ca6f6d0c39672c515365f1d7ad268eacb1e7459c060d267947a865910d2530e85ab7294a8581861e4c
   languageName: node
   linkType: hard
 
-"jscpd@npm:4.2.4":
-  version: 4.2.4
-  resolution: "jscpd@npm:4.2.4"
+"jscpd@npm:4.2.5":
+  version: 4.2.5
+  resolution: "jscpd@npm:4.2.5"
   dependencies:
-    "@jscpd/badge-reporter": "npm:4.2.4"
-    "@jscpd/core": "npm:4.2.4"
-    "@jscpd/finder": "npm:4.2.4"
-    "@jscpd/html-reporter": "npm:4.2.4"
-    "@jscpd/tokenizer": "npm:4.2.4"
+    "@jscpd/badge-reporter": "npm:4.2.5"
+    "@jscpd/core": "npm:4.2.5"
+    "@jscpd/finder": "npm:4.2.5"
+    "@jscpd/html-reporter": "npm:4.2.5"
+    "@jscpd/tokenizer": "npm:4.2.5"
     colors: "npm:^1.4.0"
-    commander: "npm:^5.0.0"
+    commander: "npm:^15.0.0"
     fs-extra: "npm:^11.2.0"
-    jscpd-sarif-reporter: "npm:4.2.4"
+    jscpd-sarif-reporter: "npm:4.2.5"
   bin:
     jscpd: bin/jscpd
-  checksum: 10c0/44cd61fb0e84c896c6bd52ec433932035d30a0e511f8b19fabb63dc8f022d6a380ef139e00ef59f798fc091b40b10e71cca2afd75c71ab981151a8ca1251bd32
+  checksum: 10c0/d6aa6710637400d4af4cadd8dd6f7f6a7bac3015cb3ae72255cf097b37937c186c0b1b4808025efe1c7816d9b0c1690fa11cd26e64822885a0c119ba054b2477
   languageName: node
   linkType: hard
 
@@ -11082,13 +11082,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-sarif-builder@npm:^3.4.0":
-  version: 3.4.0
-  resolution: "node-sarif-builder@npm:3.4.0"
+"node-sarif-builder@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "node-sarif-builder@npm:4.1.0"
   dependencies:
     "@types/sarif": "npm:^2.1.7"
     fs-extra: "npm:^11.1.1"
-  checksum: 10c0/dd7bb44d87f4abe70ae8d724b5cb8ee79c4605659b834ab9dc77040be96664c6a3daa4a8a580a9bb84dfa276defd7fc9cc381d0b8917fef780c88cd57168e706
+  checksum: 10c0/172d6243bdbd086b9382a9de1f2e5654fb17f8196a08e7a67468d0193ff1e77d8e8cc920e861da47e3d806cc49318445f256ad918901e390d97ff31f03f6aa1f
   languageName: node
   linkType: hard
 
@@ -12069,7 +12069,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pug@npm:^3.0.3":
+"pug@npm:^3.0.4":
   version: 3.0.4
   resolution: "pug@npm:3.0.4"
   dependencies:
@@ -14890,7 +14890,7 @@ __metadata:
     jest-mock: "npm:30.4.1"
     jest-preview: "npm:0.3.3"
     jest-websocket-mock: "npm:2.5.0"
-    jscpd: "npm:4.2.4"
+    jscpd: "npm:4.2.5"
     knip: "npm:6.15.0"
     moment: "npm:2.30.1"
     moment-timezone: "npm:0.6.2"
