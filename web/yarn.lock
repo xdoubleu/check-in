@@ -5505,7 +5505,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"brace-expansion@npm:^5.0.2, brace-expansion@npm:^5.0.5":
+"brace-expansion@npm:^5.0.5":
   version: 5.0.6
   resolution: "brace-expansion@npm:5.0.6"
   dependencies:
@@ -10749,12 +10749,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:10.2.4":
-  version: 10.2.4
-  resolution: "minimatch@npm:10.2.4"
+"minimatch@npm:10.2.5, minimatch@npm:^10.0.1, minimatch@npm:^10.2.2, minimatch@npm:^10.2.4, minimatch@npm:^10.2.5":
+  version: 10.2.5
+  resolution: "minimatch@npm:10.2.5"
   dependencies:
-    brace-expansion: "npm:^5.0.2"
-  checksum: 10c0/35f3dfb7b99b51efd46afd378486889f590e7efb10e0f6a10ba6800428cf65c9a8dedb74427d0570b318d749b543dc4e85f06d46d2858bc8cac7e1eb49a95945
+    brace-expansion: "npm:^5.0.5"
+  checksum: 10c0/6bb058bd6324104b9ec2f763476a35386d05079c1f5fe4fbf1f324a25237cd4534d6813ecd71f48208f4e635c1221899bef94c3c89f7df55698fe373aaae20fd
   languageName: node
   linkType: hard
 
@@ -10773,15 +10773,6 @@ __metadata:
   dependencies:
     brace-expansion: "npm:^2.0.1"
   checksum: 10c0/4202718683815a7288b13e470160a4f9560cf392adef4f453927505817e01ef6b3476ecde13cfcaed17e7326dd3b69ad44eb2daeb19a217c5500f9277893f1d6
-  languageName: node
-  linkType: hard
-
-"minimatch@npm:^10.0.1, minimatch@npm:^10.2.2, minimatch@npm:^10.2.4, minimatch@npm:^10.2.5":
-  version: 10.2.5
-  resolution: "minimatch@npm:10.2.5"
-  dependencies:
-    brace-expansion: "npm:^5.0.5"
-  checksum: 10c0/6bb058bd6324104b9ec2f763476a35386d05079c1f5fe4fbf1f324a25237cd4534d6813ecd71f48208f4e635c1221899bef94c3c89f7df55698fe373aaae20fd
   languageName: node
   linkType: hard
 
@@ -11125,9 +11116,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-package-json-lint@npm:10.4.0":
-  version: 10.4.0
-  resolution: "npm-package-json-lint@npm:10.4.0"
+"npm-package-json-lint@npm:10.4.1":
+  version: 10.4.1
+  resolution: "npm-package-json-lint@npm:10.4.1"
   dependencies:
     ajv: "npm:6.14.0"
     ajv-errors: "npm:1.0.1"
@@ -11138,14 +11129,14 @@ __metadata:
     ignore: "npm:5.3.2"
     jsonc-parser: "npm:3.3.1"
     meow: "npm:9.0.0"
-    minimatch: "npm:10.2.4"
-    semver: "npm:7.7.4"
+    minimatch: "npm:10.2.5"
+    semver: "npm:7.8.4"
     strip-json-comments: "npm:3.1.1"
-    type-fest: "npm:5.6.0"
+    type-fest: "npm:5.7.0"
     validate-npm-package-name: "npm:6.0.0"
   bin:
     npmPkgJsonLint: dist/cli.js
-  checksum: 10c0/182181ded2beea5ccb6887c7f6439a7e52791fd5ed9eb978cd306d0ee3d6144199a9029f498eb3207467296ded24ed99090c28c8db6b389dd7a8ee333e0f6d74
+  checksum: 10c0/cfc07b8d0a7ded014906b2a99b0d51929760bca40337a330a264125418c11cdc7261997b40e35914d275a4e25ea006983c972eb2c44bab77ea307f8251e24b6d
   languageName: node
   linkType: hard
 
@@ -13089,12 +13080,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.7.4":
-  version: 7.7.4
-  resolution: "semver@npm:7.7.4"
+"semver@npm:7.8.4":
+  version: 7.8.4
+  resolution: "semver@npm:7.8.4"
   bin:
     semver: bin/semver.js
-  checksum: 10c0/5215ad0234e2845d4ea5bb9d836d42b03499546ddafb12075566899fc617f68794bb6f146076b6881d755de17d6c6cc73372555879ec7dce2c2feee947866ad2
+  checksum: 10c0/81b7c296fd7927b80f67fa516b75fa1017caac8167795320de28e76ccbc6f7f01763c30ecd10d6a0d8fd089708ab0548a5aebb94b0870e99c2a2b4600a46389b
   languageName: node
   linkType: hard
 
@@ -14209,12 +14200,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:5.6.0":
-  version: 5.6.0
-  resolution: "type-fest@npm:5.6.0"
+"type-fest@npm:5.7.0":
+  version: 5.7.0
+  resolution: "type-fest@npm:5.7.0"
   dependencies:
     tagged-tag: "npm:^1.0.0"
-  checksum: 10c0/5468a8ffda7f3904e6f7bbd8069eb8b6dd4bd9156e206df7a01d09a73e28cd1afedf74ead9d0fc12841c8c90074194859feca240511c50800962fde1bd9ddcbc
+  checksum: 10c0/f71ed17b753649421e419db8cc2e140f930333a1467b1d9cca2e0e4052900fd442f2360bae73f3a6bf9340d949ac46d9a1598c709b4c8089272e7624df9c8716
   languageName: node
   linkType: hard
 
@@ -14888,7 +14879,7 @@ __metadata:
     next: "npm:16.2.6"
     next-pwa: "npm:5.6.0"
     next-router-mock: "npm:1.0.5"
-    npm-package-json-lint: "npm:10.4.0"
+    npm-package-json-lint: "npm:10.4.1"
     openapi-typescript: "npm:7.13"
     prettier: "npm:3.8.3"
     query-string: "npm:9.4.0"
