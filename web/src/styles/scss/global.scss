@@ -1,6 +1,9 @@
+$primary: #ff6640;
+$secondary: #AB91E3;
+
 $theme-colors: (
-  'primary': #ff2600,
-  'secondary': #833bec,
+  'primary': $primary,
+  'secondary': $secondary,
   'success': #1ce1ac,
   'info': #ff7d50,
   'warning': #ffbe0b,
@@ -9,15 +12,15 @@ $theme-colors: (
   'dark': #001738,
 );
 
-$component-active-bg: #ff2600;
+$component-active-bg: $primary;
 
-$pagination-active-bg: #ff2600;
-$pagination-color: #ff2600;
-$pagination-hover-color: #ff2600;
-$pagination-focus-color: #ff2600;
+$pagination-active-bg: $primary;
+$pagination-color: $primary;
+$pagination-hover-color: $primary;
+$pagination-focus-color: $primary;
 
-$nav-link-color: #ff2600;
-$nav-link-hover-color: #cc1f00;
+$nav-link-color: $primary;
+$nav-link-hover-color: darken($primary, 10%);
 
 @font-face {
   font-family: "Brandon";
