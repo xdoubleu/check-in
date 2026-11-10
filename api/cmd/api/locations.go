@@ -105,7 +105,7 @@ func (app *Application) getLocationCheckInsDayHandler(w http.ResponseWriter,
 		return
 	}
 
-	if returnType == "csv" {
+	if returnType == csvReturnType {
 		filename := app.getTimeNowUTC().
 			In(date.Location()).
 			Format(constants.CSVFileNameFormat)
@@ -200,7 +200,7 @@ func (app *Application) getLocationCheckInsRangeHandler(
 		return
 	}
 
-	if returnType == "csv" {
+	if returnType == csvReturnType {
 		filename := app.getTimeNowUTC().
 			In(startDate.Location()).
 			Format(constants.CSVFileNameFormat)
@@ -233,12 +233,18 @@ func (app *Application) getLocationCheckInsRangeHandler(
 	}
 }
 
+const (
+	csvReturnType     = "csv"
+	csvHeaderDatetime = "datetime"
+	csvHeaderCapacity = "capacity"
+)
+
 func getCSVHeaders(
 	schoolNames []string,
 ) []string {
 	headers := []string{
-		"datetime",
-		"capacity",
+		csvHeaderDatetime,
+		csvHeaderCapacity,
 	}
 
 	headers = append(headers, schoolNames...)

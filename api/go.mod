@@ -1,18 +1,16 @@
 module check-in/api
 
-go 1.25.7
+go 1.26.10
 
 require github.com/justinas/alice v1.2.0
 
 require (
 	github.com/dlclark/regexp2 v1.12.0
-	github.com/dlclark/regexp2/v2 v2.1.1
 	github.com/getsentry/sentry-go v0.46.2
 	github.com/google/uuid v1.6.0
 	github.com/pressly/goose/v3 v3.27.1
 	github.com/stretchr/testify v1.11.1
 	github.com/xdoubleu/essentia/v3 v3.0.0
-	github.com/xdoubleu/essentia/v4 v4.0.2
 	github.com/xhit/go-str2duration/v2 v2.1.0
 )
 
@@ -39,6 +37,6 @@ require (
 	github.com/jackc/puddle/v2 v2.2.2 // indirect
 	github.com/rs/cors v1.11.1 // indirect
 	golang.org/x/crypto v0.52.0
-	golang.org/x/sync v0.20.0 // indirect
-	golang.org/x/text v0.37.0 // indirect
+	golang.org/x/sync v0.25.0 // indirect
+	golang.org/x/text v0.44.0 // indirect
 )
