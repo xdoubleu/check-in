@@ -91,6 +91,7 @@ func (service AuthService) CreateCookie(
 
 	name := service.GetCookieName(scope)
 
+	//nolint:gosec // G124: Secure comes from config; HttpOnly and SameSite are set
 	cookie := http.Cookie{
 		Name:     name,
 		Value:    token.Plaintext,
@@ -120,6 +121,7 @@ func (service AuthService) DeleteCookie(
 
 	name := service.GetCookieName(scope)
 
+	//nolint:gosec // G124: Secure comes from config; HttpOnly and SameSite are set
 	return &http.Cookie{
 		Name:     name,
 		Value:    "",
